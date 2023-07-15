@@ -1,9 +1,15 @@
-import React, { useState } from "react";
+import React from "react";
 import Sidebar from "../modules/Sidebar/Sidebar";
+import Catalog from "../modules/Main_catalog/catalog";
+import OrderDetails from "../modules/Order_details/OrderDetails";
 
 function FoodPage() {
     return (
-      <Sidebar/>
+      <div className="lg:flex">
+        <Sidebar/>
+        <Catalog />
+        <OrderDetails />
+      </div>
     );
   }
   

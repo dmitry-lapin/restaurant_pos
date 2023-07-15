@@ -6,14 +6,20 @@ import './index.css';
 
 import { BrowserRouter } from "react-router-dom";
 
+import { Provider } from 'react-redux';
+
+import store from './store';
+
 const container = document.getElementById('root');
 const root = createRoot(container);
 
 //localhost:3000
 root.render(
   <React.StrictMode>
-      <BrowserRouter>
+      <BrowserRouter> 
+      <Provider store={store}>
         <App />
+      </Provider>
       </BrowserRouter>
   </React.StrictMode>
 );

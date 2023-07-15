@@ -17,3 +17,18 @@ code {
 .logo {
   font-family: 'Sedgwick Ave', cursive;
 }
+
+.scroll-styling::-webkit-scrollbar {
+  height: 5px; 
+  width: 5px;
+}
+
+.scroll-styling::-webkit-scrollbar-thumb {
+  background-color: #999;
+  border-radius: 5px; 
+}
+
+.scroll-styling:hover::-webkit-scrollbar-thumb {
+  background-color: #777;
+  border-radius: 5px; 
+}

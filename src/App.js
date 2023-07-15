@@ -7,16 +7,17 @@ import Dashboard from './pages/Dashboard';
 import Messages from './pages/Messages';
 import Settings from './pages/Settings';
 import FoodCatalog from './pages/FoodCatalog'
+import LoginPage from './pages/LoginPage';
 
 function App() {
   return (
     <Routes>
-      <Route path="/" element={<FoodPage />} />
+      <Route path="/" element={<LoginPage />} />
       <Route path="/bills" element={<Bills />} />
       <Route path="/dashboard" element={<Dashboard />} />
       <Route path="/messages" element={<Messages />} />
       <Route path="/settings" element={<Settings />} />
-      <Route path="/food_catalog" element={<FoodCatalog />} /> 
+      <Route path="/food_catalog" element={<FoodPage />} /> 
     </Routes>
   );
 }
