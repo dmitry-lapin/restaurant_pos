@@ -5,9 +5,9 @@ import OrderDetails from "../modules/Order_details/OrderDetails";
 
 function FoodPage() {
     return (
-      <div className="lg:flex">
+      <div className="flex flex-col md:flex-row">
         <Sidebar/>
-        <Catalog />
+        <Catalog /> 
         <OrderDetails />
       </div>
     );

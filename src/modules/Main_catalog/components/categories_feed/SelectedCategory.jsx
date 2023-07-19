@@ -8,7 +8,7 @@ import CategoryFeed from "./Category_feed";
 const SelectedCategory = () => {
     return(
         <FeedWrapper>
-            <TextHeader text="Selected Category" categoryTopic={true}/>
+            <TextHeader text="Selected Category" categoryTopic={true} size="text-md md:text-lg" />
             <CategoryFeed toWork={
                 Object.entries(productData).map(([key, data]) => (
                     <ProductCard key={key} dish={data} />

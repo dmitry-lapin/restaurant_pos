@@ -10,7 +10,7 @@ import PaymentOptions from "./components/PaymentOptions/PaymentOptions";
 
 const OrderDetails = () => {
     return(
-        <div className="bg-black lg:w-3/12">
+        <div className="bg-black lg:w-4/12">
             <div className="flex flex-col h-full">
                 <ModuleHeaderName bgColor="bg-zinc-900">
                     <TextHeader text="Order details" color="text-white" size="text-xl"></TextHeader>

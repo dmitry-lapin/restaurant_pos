@@ -8,9 +8,9 @@ const Catalog = () => {
 
 
   return (
-    <div className="lg:w-7/12 bg-gray-200 space-y-4">
+    <div className="w-full md:w-8/12 bg-gray-200 space-y-4">
       <ModuleHeaderName bgColor="bg-white">
-        {<TextHeader text="Default" color="text-black" size="text-xl" />}
+        {<TextHeader text="Food & Drinks" color="text-black" size="text-lg md:text-xl" />}
       </ModuleHeaderName>
       <Categories />
       <SelectedCategory />
