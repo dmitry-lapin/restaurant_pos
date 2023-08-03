@@ -47,48 +47,62 @@ export const categoriesData = [
 ];
 
 export const productData = {
-    "Pasta": {
+  "Pasta": [
+    {
       "name": "Spaghetti Bolognese",
       "price": 12.49,
       "image": PastaImg,
       "description": "A delicious spaghetti dish with Bolognese sauce."
-    },
-    "Pizza": {
+    }
+  ],
+  "Pizza": [
+    {
       "name": "Margherita Pizza",
       "price": 9.99,
       "image": MargheritaPizzaImg,
       "description": "A classic Margherita pizza with fresh ingredients."
-    },
-    "Soup": {
+    }
+  ],
+  "Soup": [
+    {
       "name": "Chicken Tikka Masala",
       "price": 14.99,
       "image": ChickenTikkaMasalaImg,
       "description": "A flavorful chicken tikka masala served with rice."
-    },
-    "Salad": {
+    }
+  ],
+  "Salad": [
+    {
       "name": "Caesar Salad",
       "price": 8.99,
       "image": SaladImg,
       "description": "Romaine, croutons, Parmesan, creamy dressing."
-    },
-    "Dessert": {
+    }
+  ],
+  "Dessert": [
+    {
       "name": "Salted chocolate & hazelnut brownies",
       "price": 19.49,
       "image": BrowniesImg,
       "description": "Decadent salted chocolate and hazelnut brownies."
-    },
-    "Main dishes": {
+    }
+  ],
+  "Main dishes": [
+    {
       "name": "BBQ Steak",
       "price": 24.99,
       "image": BBQsteakImg,
       "description": "A juicy BBQ steak cooked to perfection."
-    },
-    "Side menu": {
+    }
+  ],
+  "Side menu": [
+    {
       "name": "Baked beans",
       "price": 7.49,
       "image": BakedBeansImg,
       "description": "Enjoy a side of flavorful baked beans with your meal."
     }
-  };
+  ],
+}
 
 export default menuData;

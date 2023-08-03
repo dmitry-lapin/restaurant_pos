@@ -3,7 +3,7 @@ import AddReduceBtn from "../../../../UI/AddReduceBtn";
 
 const ProductCard = ({ dish }) => {
     return (
-      <div className="flex flex-col border bg-zinc-100 rounded-2xl shadow-md hover:shadow-xl duration-100 w-44 md:w-50">
+      <div className="flex flex-col border bg-zinc-100 rounded-2xl shadow-md hover:shadow-xl duration-100 w-44 md:w-52">
         <div>
           <img src={dish.image} alt="Product" className="w-full h-32 md:h-40 rounded-t-2xl" />
         </div>

@@ -1,8 +1,5 @@
-import React, { useState } from "react";
+import React from "react";
 import AddReduceBtn from "../../../../../../../UI/AddReduceBtn"
-import { connect } from "react-redux";
-
-import { increment, decrement } from "../../../../../../../store";
 
 const DishOrder = (props) => {
 
@@ -26,15 +23,4 @@ const DishOrder = (props) => {
     );
 }
 
-function mapStateToProps(state) {
-    return {
-        count: state
-    }
-}
-
-const mapDispatchToProps = {
-    apples: increment,
-    oranges: decrement
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(DishOrder);
+export default DishOrder;

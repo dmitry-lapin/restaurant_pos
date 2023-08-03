@@ -1,6 +1,6 @@
 import React from "react";
 
-const ModuleHeaderName = ({bgColor, children}) => {
+const ModuleHeaderName = ({bgColor, className, children}) => {
     const componentClasses = "flex justify-between w-full h-24 py-4 px-6 flex items-center " + bgColor;
 
     return(

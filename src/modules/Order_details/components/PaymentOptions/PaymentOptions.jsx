@@ -3,10 +3,10 @@ import NormalBtn from "../../../../UI/normalBtn";
 
 const PaymentOptions = () => {
     return(
-        <div className="flex flex-col bg-zinc-900 h-fit mb-2 mx-2 rounded-2xl p-4 space-y-4">
+        <div className="flex flex-col bg-zinc-900 h-fit mb-2 mx-2 rounded-2xl p-4 space-y-4 basis-2/12">
             <div className="flex flex-row space-x-3">
-                {["Cash", "Debit", "E-wallet"].map((value, index) => (
-                    <NormalBtn key={index} color="text-white" bgColor="bg-zinc-800" hoverBg="hover:bg-zinc-700" className="basis-1/3 h-12">{value}</NormalBtn>
+                {["Cash", "Debit", "Crypto"].map((value, index) => (
+                    <NormalBtn key={index} color="text-white" bgColor="bg-zinc-800" hoverBg="hover:bg-zinc-700" className="basis-1/3 h-11">{value}</NormalBtn>
                 ))}
             </div>
             <hr className="border border-zinc-500"/>

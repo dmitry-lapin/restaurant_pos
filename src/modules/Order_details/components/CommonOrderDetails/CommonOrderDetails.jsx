@@ -14,12 +14,12 @@ const CommonOrderDetails = () => {
     }
 
     return(
-        <div className="p-7 font-semibold flex justify-between h-1/12">
-            <div className="flex flex-row space-x-3">
+        <div className="p-7 font-semibold flex justify-between">
+            <div className="flex flex-row space-x-3 items-center">
                 <p className="text-white text-lg capitalize">Table {data.tableNumber}</p>
                 <p className="flex items-center text-zinc-500 text-md font-medium underline">{data.waiterName}</p>
             </div>
-            <p className="flex items-center text-zinc-500 font-semibold underline">{data.date}</p>
+            <p className="flex items-center text-zinc-500 text-lg font-semibold underline">{data.date}</p>
         </div>
     );
 }
