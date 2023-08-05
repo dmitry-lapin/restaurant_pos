@@ -1,8 +1,9 @@
 import React from "react";
 
-const FeedWrapper = ({children}) => {
+const FeedWrapper = ({children, foodCategory=false}) => {
+    let style = "flex flex-col space-y-4 " + (foodCategory ? "overflow-y-scroll scroll-styling" : "");
     return(
-        <div className="flex flex-col space-y-4">
+        <div className={style}>
             {children}
         </div>
     );

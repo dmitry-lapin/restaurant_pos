@@ -30,7 +30,7 @@ const OrderDetails = () => {
             <div className="flex flex-col h-full">
                 <ModuleHeaderName bgColor="bg-zinc-900">
                     <TextHeader text="Order details" color="text-white" size="text-lg xl:text-xl"></TextHeader>
-                    <NormalBtn onClick={handleCheckoutClick} ><img className="h-10 w-10" src={closeImg} alt="deleteOrder"/></NormalBtn>
+                    <NormalBtn onClick={handleCheckoutClick}><img className="h-10 w-10" src={closeImg} alt="deleteOrder"/></NormalBtn>
                 </ModuleHeaderName>
                 <CommonOrderDetails/>
                 <OrdersFeed />

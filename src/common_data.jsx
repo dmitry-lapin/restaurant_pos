@@ -87,7 +87,7 @@ export const productData = {
       "description": "Decadent salted chocolate and hazelnut brownies."
     }
   ],
-  "Main dishes": [
+  "Main": [
     {
       "name": "BBQ Steak",
       "price": 24.99,
@@ -95,7 +95,7 @@ export const productData = {
       "description": "A juicy BBQ steak cooked to perfection."
     }
   ],
-  "Side menu": [
+  "Side": [
     {
       "name": "Baked beans",
       "price": 7.49,
