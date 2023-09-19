@@ -1,25 +1,36 @@
-import React from "react";
+import React, { useState } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import Datepicker from "react-tailwindcss-datepicker"; 
+import { setDate } from "../../slices/OrderInformation";
 
 const CommonOrderDetails = () => {
+    const dispatch = useDispatch();
+    const tableNumber = useSelector(state => state.OrderTotal.table);
 
-    const currentDate = new Date();
-    const day = currentDate.getDate();
-    const month = currentDate.getMonth() + 1;
-    const year = currentDate.getFullYear();
-    
-    const data = {
-        tableNumber: 5,
-        date: `${day}.${month}.${year}`,
-        waiterName: "Dmytro L"
+    const [value, setValue] = useState({ 
+        startDate: new Date(), 
+        endDate: new Date().setMonth(11) 
+        }); 
+        
+    const handleValueChange = (newValue) => {
+        setValue(newValue);
+        dispatch(setDate(newValue.endDate));
     }
 
     return(
         <div className="p-7 font-semibold flex justify-between">
             <div className="flex flex-row space-x-3 items-center">
-                <p className="text-white text-lg capitalize">Table {data.tableNumber}</p>
-                <p className="flex items-center text-zinc-500 text-md font-medium underline">{data.waiterName}</p>
+                <p className="text-white text-lg capitalize">Table {tableNumber}</p>
             </div>
-            <p className="flex items-center text-zinc-500 text-lg font-semibold underline">{data.date}</p>
+            <div className="w-1/2">
+                <Datepicker
+                    primaryColor={"orange"}
+                    useRange={false}
+                    asSingle={true}
+                    value={value}
+                    onChange={handleValueChange}
+                />
+            </div>
         </div>
     );
 }

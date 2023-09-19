@@ -1,15 +1,10 @@
 import React from 'react';
-import LoginBgImage from "../assets/common_images/login_bg.jpg"
+import LoginModule from '../modules/Login_page/LoginModule';
 
 const LoginPage = () => {
     return(
-        <div className="flex flex-row h-full">
-            <div className="lg:w-1/2 bg-zinc-100 h-screen">
-                <p>there is some text</p>
-            </div>
-            <div className="lg:w-1/2 h-screen">
-                <p>some other text</p>
-            </div>
+        <div className="flex flex-row h-full bg-gradient-to-r from-zinc-200 to-stone-500">
+            <LoginModule />
         </div>
     );
 };

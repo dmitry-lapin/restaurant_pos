@@ -1,6 +1,5 @@
 import React from "react";
-import NormalBtn from "../../UI/normalBtn";
-import closeImg from "../../assets/common_icons/close.png"
+import CloseBtn from "../../UI/CloseBtn";
 import ModuleHeaderName from "../../UI/ModuleHeaderName";
 import TextHeader from "../../UI/textHeader";
 import CommonOrderDetails from "./components/CommonOrderDetails/CommonOrderDetails";
@@ -26,17 +25,20 @@ const OrderDetails = () => {
     }
 
     return(
-        <div className="bg-black w-full md:w-6/12 lg:w-4/12 xl:w-3/12 absolute right-0 h-full">
+        <div className="fixed inset-0 flex justify-center items-center z-50">
+            <div className="bg-black bg-opacity-60 absolute inset-0 z-0"></div>
+        <div className="bg-black w-full md:w-6/12 lg:w-4/12 xl:w-3/12 absolute right-0 h-full overflow-auto">
             <div className="flex flex-col h-full">
                 <ModuleHeaderName bgColor="bg-zinc-900">
                     <TextHeader text="Order details" color="text-white" size="text-lg xl:text-xl"></TextHeader>
-                    <NormalBtn onClick={handleCheckoutClick}><img className="h-10 w-10" src={closeImg} alt="deleteOrder"/></NormalBtn>
+                    <CloseBtn onClick={handleCheckoutClick} />
                 </ModuleHeaderName>
                 <CommonOrderDetails/>
                 <OrdersFeed />
                 <TotalPrice />
                 <PaymentOptions />
             </div>
+        </div>
         </div>
     );
 }

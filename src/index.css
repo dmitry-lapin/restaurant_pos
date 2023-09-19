@@ -15,7 +15,7 @@ code {
 }
 
 .logo {
-  font-family: 'Sedgwick Ave', cursive;
+  font-family: 'Short Stack', cursive;
 }
 
 .scroll-styling::-webkit-scrollbar {
@@ -30,5 +30,31 @@ code {
 
 .scroll-styling:hover::-webkit-scrollbar-thumb {
   background-color: #777;
+  border-radius: 5px; 
+}
+
+.hidden {
+  display: none;
+}
+
+.hover\:glow:hover {
+  filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.7));
+}
+
+/* Для WebKit браузеров (Chrome, Safari) */
+/* Скрываем стандартную полосу прокрутки */
+::-webkit-scrollbar {
+  height: 5px; 
+  width: 5px;
+}
+
+/* Фон полосы прокрутки */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Цвет фона */
+}
+
+/* Стиль ползунка (бегунка) полосы прокрутки */
+::-webkit-scrollbar-thumb {
+  background-color: #999;
   border-radius: 5px; 
 }

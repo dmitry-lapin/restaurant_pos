@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Sidemenu from './components/Sidemenu/Sidemenu';
 import InfoContainer from './components/InfoContainer/InfoContainer';
 import MainLogo from '../../UI/MainLogo';
@@ -6,27 +6,41 @@ import ModuleHeaderName from '../../UI/ModuleHeaderName';
 import MenuTogglerBtn from '../../UI/MenuTogglerBtn';
 import MenuWrapper from './components/MenuWrapper/MenuWrapper';
 import CheckoutBtn from '../../UI/CheckoutBtn';
+import UserData from './components/userData/userData';
+import { useLocation } from 'react-router-dom';
 
 const Sidebar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(true);
+  const location = useLocation();
+
+  useEffect(() => {
+    if (isMenuOpen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'auto';
+    }
+  }, [isMenuOpen]);
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   }
 
-  let menuStyling = `flex flex-col md:flex w-full md:flex-col md:h-screen bg-stone-950 md:w-fit lg:w-3/12 md:space-y-3 ${isMenuOpen ? "h-screen space-y-10 absolute top-0 left-0 md:static" : ""}`;
+  let menuStyling = `flex flex-col md:flex w-full md:flex-col md:h-screen bg-stone-950 md:w-fit lg:w-3/12 md:space-y-3 ${isMenuOpen ? "h-screen space-y-10 absolute top-0 left-0 md:static z-10 " : ""}`;
 
   return (
     <div className={menuStyling}>
-      <ModuleHeaderName bgColor="bg-zinc-900">
+      <ModuleHeaderName bgColor="bg-zinc-900 hover:bg-zinc-800 duration-100">
         <MenuTogglerBtn isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} />
         <MainLogo />
-        <CheckoutBtn displayOnBig={false}/>
+        {location.pathname === '/food_catalog' && <CheckoutBtn displayOnBig={false} />}
       </ModuleHeaderName>
       {isMenuOpen && (
         <MenuWrapper>
           <Sidemenu />
-          <InfoContainer />
+          <div>
+            <UserData />
+            <InfoContainer />
+          </div>
         </MenuWrapper>
       )}
     </div>

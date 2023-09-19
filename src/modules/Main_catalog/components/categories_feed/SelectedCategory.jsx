@@ -8,19 +8,28 @@ import CategoryFeed from "./Category_feed";
 import { useSelector} from 'react-redux';
 
 const SelectedCategory = () => {
-    const selectedCategory = useSelector((state) => state.Categories.selectedCategory);
-    const filteredDishes = selectedCategory === 'All' ? Object.keys(productData) : [selectedCategory];
-  
-    return (
-      <FeedWrapper foodCategory={true}>
-        {filteredDishes.map((category, index) => (
-          <React.Fragment key={index}>
-            <TextHeader text={category} categoryTopic={true} size="text-md md:text-lg" />
-            <CategoryFeed toWork={productData[category].map((data, key) => <ProductCard key={key} dish={data} />)} />
-          </React.Fragment>
-        ))}
-      </FeedWrapper>
-    );
-  };
+  const selectedCategory = useSelector((state) => state.Categories.selectedCategory);
+  const filteredDishes = selectedCategory === 'All' ? Object.keys(productData) : [selectedCategory];
+
+  return (
+    <>
+      <TextHeader text="Selected Category" size="text-md md:text-lg p-4" />
+        <div className="mb-4 p-3">
+          <FeedWrapper foodCategory={true}>
+            {filteredDishes.map((category, index) => (
+              <React.Fragment key={index}>
+                <TextHeader
+                  text={category}
+                  categoryTopic={true}
+                  size="ml-2 text-md md:text-lg border border-l-4 border-l-blue-500"
+                />
+                <CategoryFeed toWork={productData[category].map((data, key) => <ProductCard key={key} dish={data} />)} />
+              </React.Fragment>
+            ))}
+          </FeedWrapper>
+        </div>
+    </>
+  );
+};
 
 export default SelectedCategory;

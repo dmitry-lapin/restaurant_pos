@@ -9,7 +9,7 @@ const Categories = () => {
     
     return(
         <FeedWrapper>
-            <TextHeader text="Categories" color="text-black" categoryTopic={true} size="text-md md:text-lg"/>
+            <TextHeader text="Categories" color="text-black" categoryTopic={true} size="text-md md:text-lg pt-4"/>
             <CategoryFeed toWork={
                 categoriesData.map((category, index) => (
                     <CategoryBtn key={index} name={category.name} image={category.image} />
