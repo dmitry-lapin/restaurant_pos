@@ -25,6 +25,9 @@ import Messages from './assets/menu_icons/messages.png'
 import Bills from './assets/menu_icons/bills.png'
 import Settings from './assets/menu_icons/settings.png'
 
+//user image 
+import userImage from '../src/assets/common_images/userImage.png'
+
 const menuData = [
     ['Dashboard', '/dashboard', Dashboard],
     ['Food & Drinks', '/food_catalog', Food],
@@ -45,6 +48,20 @@ export const categoriesData = [
   { name: 'Vegetarian', image: Vegetarian },
   { name: 'Kids menu', image: Kids }
 ];
+
+export const userInformation = {
+  name: "Homer Simpson",
+  image: userImage,
+  position: "waiter",
+  generalInfo: {
+    firstName: "Homer",
+    secondName: "Simpson",
+    email: "homer@simpson.cartoon",
+    country: "USA",
+    city: "Springfield",
+    address: "742 Evergreen Terrace"
+  }
+}
 
 export const productData = {
   "Pasta": [

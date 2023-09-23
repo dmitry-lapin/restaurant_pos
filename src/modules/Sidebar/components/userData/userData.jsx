@@ -1,16 +1,12 @@
 import React from "react";
-import userImage from "../../../../assets/common_images/userImage.png"
+import { userInformation } from '../../../../common_data';
 
 const UserData = () => {
-    const userInformation = {
-        name: "Homer Simpson",
-        position: "waiter"
-    }
-
+    
     return (
         <div className="flex justify-between lg:justify-between md:justify-center bg-zinc-900 hover:bg-zinc-800 border-2 border-transparent hover:border-2 hover:border-zinc-900 mx-3 rounded-2xl duration-100 p-2 cursor-pointer mb-0 md:mb-3 lg:mb-0">
             <div className="flex space-x-3">
-                <img src={userImage} className="w-14 h-fit rounded-xl self-center" alt="User" />
+                <img src={userInformation.image} className="w-14 h-fit rounded-xl self-center" alt="User" />
                 <div className=" truncate block md:hidden lg:block">
                     <p className="text-white font-semibold text-md xl:text-lg">{userInformation.name}</p>
                     <p className="text-gray-300 font-normal truncate text-sm xl:text-normal">{userInformation.position}</p>
