@@ -1,20 +1,22 @@
 # Restaurant Point of Sale
 
-Это веб-приложение для управления заказами и отслеживания статистики в ресторане. Проект разработан с использованием React, Redux Toolkit, Tailwind CSS, Firebase Realtime Database и React Router.
+
+
+GodDish POS - web application for managing orders and tracking restaurant statistics. The project was developed using React, Redux Toolkit, Tailwind CSS, Firebase Realtime Database and React Router.
 
 ![food_catalog](./src/assets/preview_screenshots/food_catalog1.png)
 
-## Основные функции
-- **Управление заказами:** Добавление, удаление и редактирование заказов.
-- **Статистика:** Отслеживание общей выручки и количества приобретенных блюд.
-- **Интерфейс для сотрудников:** Отдельный интерфейс для сотрудников с разными ролями доступа.
-- **Система оплаты:** Возможность указания метода оплаты для каждого заказа.
-- **Отчеты:** Генерация отчетов и анализ статистики.
+## Main functions
+- **Order management:** Adding, deleting and editing orders.
+- **Statistics:** Tracks total revenue and number of dishes purchased.
+- **Interface for employees:** Separate interface for employees with different access roles.
+- **Payment system:** Possibility of specifying the payment method for each order.
+- **Reports:** Generation of reports and analysis of statistics.
 ![food_catalog](./src/assets/preview_screenshots/food_catalog2.png)
 ![dashboard](./src/assets/preview_screenshots/dashboard.png)
-## Установка
+## Installation
 
-1. Склонируйте репозиторий:
+1. Clone repo:
 
 ```bash
 git clone https://github.com/ваш_пользователь/restaurant-pos.git
