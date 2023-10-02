@@ -1,18 +1,14 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 import Sidebar from "../modules/Sidebar/Sidebar";
 import Catalog from "../modules/Main_catalog/catalog";
 import OrderDetails from "../modules/Order_details/OrderDetails";
-import { useSelector } from "react-redux";
+import {  useSelector } from "react-redux";
 import Modal from "../modules/Modal/Modal";
-import TableNumberModal from "../modules/TableNumberModal/TableNumberModal";
+import TableNumberModal from "../modules/TableNumberModal/TableNumberModal"
 
 function FoodPage() {
-    const [isOpen, setIsOpen] = useState(true);
+    const isOpen = useSelector(state => state.ToggleTableModal.isToggleModalVisible);
     const modalVisibility = useSelector(state => state.ModalSlice.isModalVisible);
-
-    useEffect(() => {
-      setIsOpen(true);
-    }, []);
     
     return (
       <div className="flex flex-col md:flex-row h-screen">
@@ -25,4 +21,4 @@ function FoodPage() {
     );
   }
   
-  export default FoodPage;
+export default FoodPage;

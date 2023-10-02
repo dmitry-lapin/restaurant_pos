@@ -2,34 +2,18 @@ import React from "react";
 import AddReduceBtn from "../../../../UI/AddReduceBtn";
 import { useDispatch } from "react-redux";
 import { addDishToOrder } from "../../../Order_details/slices/OrdersFeedSlice";
-import NotificationImage from "../../../../assets/common_icons/success_notification.png";
 
-import { ToastContainer, toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
+import toast, { Toaster } from "react-hot-toast";
+import Toast from "../../../../UI/Toast";
 
 const ProductCard = ({ dish }) => {
   const dispatch = useDispatch();
 
   const handleAddToCart = () => {
     dispatch(addDishToOrder(dish));
-    const toastContent = (
-      <div className="flex space-x-2">
-        <img src={NotificationImage} alt="Notification" className="w-12 h-12"/>
-        <p>
-          {dish.name} was added to cart.
-        </p>
-      </div>
-    );
-  
-    toast(toastContent, {
-      position: "bottom-right",
-      autoClose: 1500,
-      hideProgressBar: true,
-      closeOnClick: true,
-      pauseOnHover: true,
-      draggable: true,
-      progress: undefined,
-      theme: "light",
+    toast.custom(<Toast type="dish"/>,{
+      duration: 1000,
+      position: 'bottom-center',
     });
   }
 
@@ -45,8 +29,8 @@ const ProductCard = ({ dish }) => {
           <p className="text-md font-semibold">$ {dish.price}</p>
           <AddReduceBtn action="+" bgColor="bg-white" onClick={handleAddToCart}/>
         </div>
-        <ToastContainer />
       </div>
+      <Toaster />
     </div>
   );
 };

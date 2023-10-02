@@ -4,13 +4,15 @@ import SelectedCategorySliceReducer from '../modules/Main_catalog/components/sli
 import OrdersFeedSliceReducer from '../modules/Order_details/slices/OrdersFeedSlice';
 import toggleModalSlice from '../modules/Order_details/slices/toggleModalSlice';
 import OrderInformation from '../modules/Order_details/slices/OrderInformation';
+import toggleTableModalSlice from '../modules/Order_details/slices/toggleTableModalSlice';
 
 const rootReducer = combineReducers({
   OrderDetails: OrderDetailsReducer,
   Categories: SelectedCategorySliceReducer,
   OrdersFeed: OrdersFeedSliceReducer,
   ModalSlice: toggleModalSlice,
-  OrderTotal: OrderInformation
+  OrderTotal: OrderInformation,
+  ToggleTableModal: toggleTableModalSlice
 });
 
 export default rootReducer;

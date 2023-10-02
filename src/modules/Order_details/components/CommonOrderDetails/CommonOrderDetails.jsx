@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import Datepicker from "react-tailwindcss-datepicker"; 
 import { setDate } from "../../slices/OrderInformation";
+import { toggleModal } from "./../../slices/toggleTableModalSlice"
 
 const CommonOrderDetails = () => {
     const dispatch = useDispatch();
@@ -18,7 +19,7 @@ const CommonOrderDetails = () => {
     }
 
     const handleTableChange = () => {
-
+        dispatch(toggleModal());
     }
 
     return(

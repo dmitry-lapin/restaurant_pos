@@ -1,15 +1,17 @@
 import React, { useState } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { setTableNumber } from "../Order_details/slices/OrderInformation";
+import { toggleModal } from "../Order_details/slices/toggleTableModalSlice";
 
 function TableNumberModal() {
     const dispatch = useDispatch();
-    const [isOpen, setIsOpen] = useState(true);
+
+    const isOpen = useSelector(state => state.ToggleTableModal.isToggleModalVisible);
     const [inputText, setInputText] = useState('');
     const [isValid, setIsValid] = useState(false);
   
     const closeModal = () => {
-      setIsOpen(false);
+      dispatch(toggleModal());
     };
   
     const handleInputChange = (e) => {

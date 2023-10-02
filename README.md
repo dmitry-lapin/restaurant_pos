@@ -1,7 +1,5 @@
 # Restaurant Point of Sale
 
-
-
 GodDish POS - web application for managing orders and tracking restaurant statistics. The project was developed using React, Redux Toolkit, Tailwind CSS, Firebase Realtime Database and React Router.
 
 ![food_catalog](./src/assets/preview_screenshots/food_catalog1.png)

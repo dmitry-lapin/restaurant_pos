@@ -9,8 +9,11 @@ const PaymentOptions = () => {
     const dispatch = useDispatch();
     const selectedPaymentMethod = useSelector(state => state.OrderTotal.paymentMethod);
     let isFeedEmpty = useSelector(state => state.OrdersFeed.SelectedDishes);
+    let isTableSelected = useSelector(state => state.OrderTotal.table)
     isFeedEmpty = isFeedEmpty.length;
-    
+    console.log(isTableSelected)
+    console.log(isTableSelected === null)
+
     const handleToggleModal = () => {
         dispatch(toggleModal());
         dispatch(toggleVisibility());
@@ -39,12 +42,12 @@ const PaymentOptions = () => {
             <button
                 onClick={handleToggleModal}
                 className={`text-black bg-slate-100 hover:bg-slate-200 duration-100 rounded-2xl font-semibold text-2xl h-16 ${
-                    isFeedEmpty === 0 ? 'disabled:opacity-50 disabled:pointer-events-none' : ''
+                    isFeedEmpty === 0 && isTableSelected === null ? 'disabled:opacity-50 disabled:pointer-events-none' : ''
                     }`}
-                disabled={isFeedEmpty === 0}
+                disabled={isFeedEmpty === 0 && isTableSelected === null}
             >
-    <p>Place order</p>
-</button>
+                <p>Place order</p>
+            </button>
         </div>
     );
 }

@@ -40,7 +40,7 @@ const menuData = [
     ['Settings', '/settings', Settings]
 ];
 
-export const categoriesData = [
+export const categoriesData = [ 
   { name: 'All', image: All },
   { name: 'Salad', image: Salad },
   { name: 'Soup', image: Soup },

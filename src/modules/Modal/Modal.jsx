@@ -3,12 +3,16 @@ import { useDispatch } from 'react-redux';
 import { toggleModal } from '../Order_details/slices/toggleModalSlice';
 import CloseBtn from '../../UI/CloseBtn';
 import { useSelector } from 'react-redux';
+import Toast from '../../UI/Toast';
 
 import { setOrderInformation } from '../Order_details/slices/OrderInformation';
 import { setOrdersFeed } from '../Order_details/slices/OrdersFeedSlice';
 
 import { database } from '../../firebase_config';
-import { ref, set, onValue, push, get } from 'firebase/database';
+import { ref, set, onValue, get } from 'firebase/database';
+
+import toast, { Toaster } from 'react-hot-toast';
+
 
 const Modal = () => {
     const currentDate = new Date();
@@ -27,8 +31,7 @@ const Modal = () => {
     const ordersFeed = useSelector((state) => state.OrdersFeed);
   
     useEffect(() => {
-      const ordersRef = ref(database, `orders/${orderCount}`);
-  
+      const ordersRef = ref(database, "orders");
       onValue(ordersRef, (snapshot) => { //i used it to get an database 'orders' length.
         if (snapshot.exists()) {
           const orderData = snapshot.val();
@@ -53,10 +56,9 @@ const Modal = () => {
           ...ordersFeed,
         };
       
-        const ordersRef = ref(database, 'orders');
-        const newOrderRef = push(ordersRef); // Создайте новую запись в базе данных
+        const ordersRef = ref(database, `orders/${orderCount}`);
       
-        set(newOrderRef, newOrder)
+        set(ordersRef, newOrder)
           .then(() => {
             // Обновите статистику напрямую
             const statisticsRef = ref(database, `statistics/${year}-${month}`);
@@ -103,6 +105,12 @@ const Modal = () => {
           })
           .catch((error) => {
             console.error('Error placing order:', error);
+          })
+          .then(() => {
+            toast.custom(<Toast type="order"/>,{
+              duration: 1000,
+              position: 'bottom-center',
+            });
           });
       }
       
@@ -161,6 +169,7 @@ const Modal = () => {
           <button className="rounded-2xl bg-black py-4 w-full duration-100 hover:bg-neutral-950 shadow-lg" onClick={handlePlaceOrder}>Place</button>
         </div>
       </div>
+      <Toaster />
     </div>
   );
 }
