@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Routes, Route } from "react-router-dom";
 
 import FoodPage from './pages/FoodPage';
@@ -10,6 +10,7 @@ import LoginPage from './pages/LoginPage';
 import ListOfOrders from './pages/ListOfOrders';
 
 function App() {
+  
   return (
     <Routes>
       <Route path="/" element={<LoginPage />} />

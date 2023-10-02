@@ -28,6 +28,10 @@ import Settings from './assets/menu_icons/settings.png'
 //user image 
 import userImage from '../src/assets/common_images/userImage.png'
 
+
+import { ref, set } from 'firebase/database';
+import { database } from "./firebase_config";
+
 const menuData = [
     ['Dashboard', '/dashboard', Dashboard],
     ['Food & Drinks', '/food_catalog', Food],
@@ -47,6 +51,20 @@ export const categoriesData = [
   { name: 'Side', image: Side },
   { name: 'Vegetarian', image: Vegetarian },
   { name: 'Kids menu', image: Kids }
+];
+
+const f = () => {
+  set(ref(database, 'categories'), categoriesData);
+}
+
+f();
+
+export const teamData = [
+  {
+    name: "Bart Simpson",
+    position: 'waiter',
+    photo: ''
+  },
 ];
 
 export const userInformation = {

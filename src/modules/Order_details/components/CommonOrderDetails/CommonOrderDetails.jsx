@@ -17,10 +17,14 @@ const CommonOrderDetails = () => {
         dispatch(setDate(newValue.endDate));
     }
 
+    const handleTableChange = () => {
+
+    }
+
     return(
         <div className="p-7 font-semibold flex justify-between">
             <div className="flex flex-row space-x-3 items-center">
-                <p className="text-white text-lg capitalize">Table {tableNumber}</p>
+                <button onClick={handleTableChange} className="text-white text-lg capitalize">Table {tableNumber}</button>
             </div>
             <div className="w-1/2">
                 <Datepicker

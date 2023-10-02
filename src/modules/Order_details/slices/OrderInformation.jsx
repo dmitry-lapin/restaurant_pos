@@ -23,9 +23,16 @@ const OrderInformation = createSlice({
         },
         setDate: (state, action) => {
             state.date = action.payload;
-        }
+        },
+        setOrderInformation: (state, action) => {
+            const { paymentMethod, date, waiter, table } = action.payload;
+            state.paymentMethod = paymentMethod;
+            state.date = date;
+            state.waiter = waiter;
+            state.table = table;
+          },
     }
 });
 
-export const { setPaymentMethod, setTableNumber, setDate } = OrderInformation.actions;
+export const { setPaymentMethod, setTableNumber, setDate, setOrderInformation } = OrderInformation.actions;
 export default OrderInformation.reducer;

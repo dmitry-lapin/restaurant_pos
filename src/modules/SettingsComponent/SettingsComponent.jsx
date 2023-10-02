@@ -6,6 +6,7 @@ import { userInformation } from "../../common_data";
 import General from "./TabsContent.jsx/GeneralTab";
 import Profile from "./TabsContent.jsx/ProfileTab";
 import Security from "./TabsContent.jsx/SecurityTab";
+import Email from "./TabsContent.jsx/EmailTab";
 
 const SettingsComponent = () => {
     const tabs = [
@@ -13,7 +14,7 @@ const SettingsComponent = () => {
         { label: 'Profile', content: <Profile /> },
         { label: 'Security', content: <Security /> },
         { label: 'Team', content: 'Содержимое вкладки 3' },
-        { label: 'Email', content: 'Содержимое вкладки 3' },
+        { label: 'Email', content: <Email /> },
         { label: 'Notifications', content: 'Содержимое вкладки 3' },
       ];
 

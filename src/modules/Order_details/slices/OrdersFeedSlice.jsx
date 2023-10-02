@@ -42,10 +42,13 @@ const OrdersFeedSlice = createSlice({
                 state.totalAmount -= removedDish.price * removedDish.quantity;
             }
         },
+        setOrdersFeed: (state, action) => {
+            const { SelectedDishes, totalAmount } = action.payload;
+            state.SelectedDishes = SelectedDishes;
+            state.totalAmount = totalAmount;
+          },  
     },
 });
 
-export const { removeDish } = OrdersFeedSlice.actions;
-export const { addDishToOrder } = OrdersFeedSlice.actions;
-export const { removeAllDishes } = OrdersFeedSlice.actions;
+export const { removeDish, addDishToOrder, removeAllDishes, setOrdersFeed } = OrdersFeedSlice.actions;
 export default OrdersFeedSlice.reducer;

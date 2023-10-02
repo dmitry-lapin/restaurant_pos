@@ -15,7 +15,7 @@ const ChartPie = () => {
     <div style={{ width: '75%', height: 300 }}>
       <ResponsiveContainer>
         <PieChart>
-          <Pie dataKey="value" data={data} fill="#8884d8" label />
+          <Pie dataKey="value" data={data} fill="#1D4ED8" label />
         </PieChart>
       </ResponsiveContainer>
     </div>

@@ -22,7 +22,7 @@ export default function Tabs({tabsData}) {
             );
           })}
         </div>
-        <div className="flex flex-col flex-grow w-10/12 self-start py-8 pl-10">
+        <div className="flex flex-col flex-grow w-full lg:w-11/12 xl:w-10/12 self-start py-8 pl-10">
           {tabsData[activeTabIndex].content}
         </div>
       </>

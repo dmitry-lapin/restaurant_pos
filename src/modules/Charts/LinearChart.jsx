@@ -65,7 +65,7 @@ const LinearChart = () => {
           <XAxis dataKey="name" />
           <YAxis />
           <Tooltip />
-          <Area type="monotone" dataKey="uv" stroke="#8884d8" fill="#8884d8" />
+          <Area type="monotone" dataKey="uv" stroke="#1D4ED8" fill="#1D4ED8" />
         </AreaChart>
       </ResponsiveContainer>
     </div>
