@@ -1,33 +1,49 @@
-import React from 'react';
-import { ResponsiveContainer, PieChart, Pie } from 'recharts';
-import { database} from "../../firebase_config";
-import { ref } from "firebase/database";
+import ReactEChart from "echarts-for-react";
 
-const data = [
-  { name: 'Dish 1', value: 132 },
-  { name: 'Dish 2', value: 74 },
-  { name: 'Dish 3', value: 55 },
-  { name: 'Dish 4', value: 174 },
-  { name: 'Dish 5', value: 111 },
-  { name: 'Dish 6', value: 64 },
-];
-
-const currentDate = new Date();
-const year = currentDate.getFullYear();
-const month = (currentDate.getMonth() + 1).toString().padStart(2, '0');
-const formattedDate = `${year}-${month}`;
-
-const ChartPie = () => {
-  const dishesRef = ref(database, formattedDate);
+export default function PieChart() {
+  const option = {
+    title: {
+      text: 'Amount of dishes',
+      subtext: 'Fake Data',
+      left: 'center'
+    },
+    tooltip: {
+      trigger: 'item'
+    },
+    legend: {
+      orient: 'vertical',
+      left: 'left'
+    },
+    series: [
+      {
+        name: 'Access From',
+        type: 'pie',
+        radius: '60%',
+        data: [
+          { value: 1048, name: 'Search Engine' },
+          { value: 735, name: 'Direct' },
+          { value: 580, name: 'Email' },
+          { value: 484, name: 'Union Ads' },
+          { value: 300, name: 'Video Ads' }
+        ],
+        emphasis: {
+          itemStyle: {
+            shadowBlur: 10,
+            shadowOffsetX: 0,
+            shadowColor: 'rgba(0, 0, 0, 0.5)'
+          }
+        }
+      }
+    ]
+  };
+  
   return (
-    <div style={{ width: '75%', height: 300 }}>
-      <ResponsiveContainer>
-        <PieChart>
-          <Pie dataKey="value" data={data} fill="#1D4ED8" label />
-        </PieChart>
-      </ResponsiveContainer>
-    </div>
+      <ReactEChart
+        style={{
+          width: "100%",
+          height: "100%"
+        }}
+        option={option}
+      />
   );
 }
-
-export default ChartPie;
