@@ -1,7 +1,7 @@
 import React from "react";
 import ModuleHeaderName from "../../UI/ModuleHeaderName";
 import TextHeader from "../../UI/textHeader";
-import { StatisticalArrData } from "../../common_data";
+import { FetchStatisticsData } from "../../app/helpers/fetchStatisticsData";
 import StatisticalComponent from "./StatisticalComponent/StatisticalComponent";
 import LinearChart from "../Charts/LinearChart";
 import ChartPie from "../Charts/PieChart";
@@ -10,7 +10,6 @@ import OrderList from "./OrderList/OrderList";
 import Report from "./Report/Report";
 
 const DashboardComponent = () => {
-
     return(
         <div className="flex flex-1 flex-col bg-gray-200">
             <ModuleHeaderName bgColor="bg-white">
@@ -18,7 +17,7 @@ const DashboardComponent = () => {
             </ModuleHeaderName>
             <div className="p-4 space-y-5 overflow-auto flex flex-col flex-grow">
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
-                    {StatisticalArrData.map((item, index) => (
+                    {FetchStatisticsData().map((item, index) => (
                     <div key={index}>
                         <StatisticalComponent element={item} />
                     </div>

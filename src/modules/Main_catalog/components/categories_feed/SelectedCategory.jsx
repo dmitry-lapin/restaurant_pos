@@ -39,9 +39,11 @@ const SelectedCategory = () => {
                 size="ml-2 text-md md:text-lg border border-l-4 border-l-blue-500"
               />
               <CategoryFeed
-                toWork={dishes[category].map((data, key) => (
-                  <ProductCard key={key} dish={data} />
-                ))}
+                toWork={dishes[category] ? (
+                  dishes[category].map((data, key) => (
+                    <ProductCard key={key} dish={data} />
+                  ))
+                ) : null}
               />
             </React.Fragment>
           ))}
