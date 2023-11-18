@@ -13,15 +13,21 @@ import { ref, set, onValue, get } from 'firebase/database';
 
 import toast, { Toaster } from 'react-hot-toast';
 
+import calculateAverage from '../../app/helpers/calculateAverage';
 
 const Modal = () => {
     const currentDate = new Date();
     const year = currentDate.getFullYear();
     const month = (currentDate.getMonth() + 1).toString().padStart(2, '0');
     const day = currentDate.getDate().toString().padStart(2, '0');
-    const formattedDate = `${year}-${month}-${day}`; //date to push it to database.
-  
-  
+    const formattedDate = `${year}-${month}-${day}`; //date in format year-month-day
+
+    let selectedDate = useSelector((state) => state.OrderTotal.date); //Selected in dish date.
+    const dateParts = selectedDate.split('-');
+    const [yearDate, MonthDate] = [dateParts[0], dateParts[1]];
+    selectedDate = `${yearDate}-${MonthDate}`; //formatted selected in order date. It's gonna be pushed to db.
+
+
     const dispatch = useDispatch();
     const dishes = useSelector((state) => state.OrdersFeed.SelectedDishes); //selected dishes by users in array.
     const [orderCount, setOrderCount] = useState(0);
@@ -31,7 +37,7 @@ const Modal = () => {
     const ordersFeed = useSelector((state) => state.OrdersFeed);
   
     useEffect(() => {
-      const ordersRef = ref(database, "orders");
+      const ordersRef = ref(database, `orders/${selectedDate}`);
       onValue(ordersRef, (snapshot) => { //i used it to get an database 'orders' length.
         if (snapshot.exists()) {
           const orderData = snapshot.val();
@@ -41,7 +47,7 @@ const Modal = () => {
           setOrderCount(0);
         }
       });
-    }, []);
+    }, [selectedDate]);
   
     let price = useSelector((state) => state.OrdersFeed.totalAmount); //total price of order.
     price = price.toFixed(2);
@@ -56,34 +62,37 @@ const Modal = () => {
           ...ordersFeed,
         };
       
-        const ordersRef = ref(database, `orders/${orderCount}`);
+        const ordersRef = ref(database, `orders/${selectedDate}/${orderCount+1}`);
       
         set(ordersRef, newOrder)
           .then(() => {
-            // Обновите статистику напрямую
-            const statisticsRef = ref(database, `statistics/${year}-${month}`);
+            const statisticsRef = ref(database, `statistics/${selectedDate}`);
             
-            // Сначала получите текущие статистические данные
             get(statisticsRef)
               .then((snapshot) => {
                 const currentStatistics = snapshot.val() || {};
                 const updatedStatistics = { ...currentStatistics };
       
-                // Здесь вы можете обновить статистические данные, например, общую выручку и количество приобретенных блюд
-                updatedStatistics.revenue = (updatedStatistics.revenue || 0) + parseFloat(price); // Парсим цену обратно в число
+                updatedStatistics.revenue = (updatedStatistics.revenue || 0) + parseFloat(price);
       
                 dishes.forEach((dish) => {
                   updatedStatistics.dishes = updatedStatistics.dishes || {};
                   updatedStatistics.dishes[dish.name] = (updatedStatistics.dishes[dish.name] || 0) + dish.quantity;
                 });
       
-                // Затем установите обновленные статистические данные
+                if (!updatedStatistics.averageChecksArr) {
+                  updatedStatistics.averageChecksArr = [parseFloat(price)];
+                } else {
+                  updatedStatistics.averageChecksArr.push(parseFloat(price));
+                  updatedStatistics.averageCheck = calculateAverage(updatedStatistics.averageChecksArr);
+                }
+
+
                 set(statisticsRef, updatedStatistics)
                   .then(() => {
                     console.log('Order placed successfully and statistics updated');
                     dispatch(toggleModal());
                     
-                    // Очистите состояния Redux
                     dispatch(setOrdersFeed({
                       SelectedDishes: [],
                       totalAmount: 0

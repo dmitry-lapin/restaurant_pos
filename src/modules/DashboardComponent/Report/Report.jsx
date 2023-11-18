@@ -8,7 +8,7 @@ const Report = () => {
     const formattedDate = `${currentYear}`;
 
     return(
-        <div className="w-full md:w-4/12 bg-white rounded-2xl border-zinc-300 border flex flex-col justify-between">
+        <div className="w-full md:w-5/12 bg-white rounded-2xl border-zinc-300 border flex flex-col justify-between">
             <div className="flex flex-row justify-evenly items-center px-4 lg:px-10 py-4 md:py-5 rounded-t-2xl bg-slate-900 bg-opacity-75">
                 <p className="text-xl md:text-md lg:text-lg font-medium w-fit text-white">Full report</p>
                 <p className="text-blue-500 text-lg md:text-normal font-semibold">/ {formattedDate}</p>

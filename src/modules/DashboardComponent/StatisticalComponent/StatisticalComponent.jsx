@@ -2,14 +2,11 @@ import React from "react";
 import { calculateDifferenceInPercents } from "../../../app/helpers/calculateDifference";
 
 const StatisticalComponent = ({ element }) => {
-  const differenceInPercents = calculateDifferenceInPercents(
-    element.value,
-    element.previousMonthValue
-  );
+  const valueDifference = calculateDifferenceInPercents(element.value,element.previousMonthValue);
   let svg;
   let textColor;
 
-  if (differenceInPercents > 0) {
+  if (valueDifference > 0) {
     svg = (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -27,7 +24,7 @@ const StatisticalComponent = ({ element }) => {
       </svg>
     );
     textColor = "text-green-600";
-  } else if (differenceInPercents < 0) {
+  } else if (valueDifference < 0) {
     svg = (
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -54,11 +51,11 @@ const StatisticalComponent = ({ element }) => {
         <span className="">{element.icon}</span>
       </div>
       <div className="w-full flex flex-row justify-between">
-        <p className={`font-semibold text-xl`}>{element.value}</p>
+        <p className={`font-semibold text-xl`}>{ typeof(element.value) === 'number' ? element.value.toFixed(2) : element.value }</p>
         <span className="flex-row space-x-1 items-center hidden xl:flex">
           {svg}
           <p className={`self-center text-center ${textColor}`}>
-            {differenceInPercents}%
+            {valueDifference}%
           </p>
         </span>
       </div>

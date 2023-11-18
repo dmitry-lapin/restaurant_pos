@@ -7,7 +7,7 @@ import AuthorShipLogo from "../../../../assets/common_icons/authorship.png"
 
 const InfoContainer = () => {
     return(
-        <div className="flex flex-col items-center bg-zinc-900 mx-3 mb-3 rounded-lg mt-3 space-y-3 pt-6 border-2 border-zinc-500 md:hidden lg:flex">
+        <div className="flex flex-col items-center bg-zinc-900 mx-3 mb-3 rounded-lg mt-3 space-y-3 pt-6 border-2 border-zinc-800 md:hidden lg:flex">
             <div>
                 <Logo params="font-semibold self-center text-xl text-white"/>
             </div>

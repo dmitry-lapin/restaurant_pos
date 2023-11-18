@@ -3,9 +3,9 @@ import React from "react";
 const OrderList = () => {
     const orders = [
       {
-        no: '1',
+        no: '# 1',
         id: '#12345',
-        date: '11-09-2023/20:43',
+        date: '11 Sep, 2023',
         table: '78',
         paymentMethod: 'Cash',
         price: '$ 20.74',
@@ -17,9 +17,9 @@ const OrderList = () => {
         </button>
       },
       {
-        no: '2',
+        no: '# 2',
         id: '#12346',
-        date: '11-09-2023/18:22',
+        date: '11 Sep, 2023',
         table: '24',
         paymentMethod: 'Card',
         price: '$ 34.50',
@@ -33,30 +33,28 @@ const OrderList = () => {
     ];
   
     const categories = {
-      'no': 'No',
-      'id': 'ID',
+      'no': 'No.',
       'date': 'Date',
       'table': 'Table',
-      'paymentMethod': 'Payment method',
       'price': 'Price',
-      'btnDetails': 'Details'
+      'btnDetails': 'Actions'
     };
   
     const categoryKeys = Object.keys(categories);
   
     return (
-      <div className="w-full md:w-8/12 border bg-white rounded-2xl p-5 border-zinc-300 space-y-4">
-        <div className="flex justify-between">
-          <p className="font-semibold text-lg">Order List</p>
-          <a href="#" className="font-medium">View all</a>
+      <div className="w-full md:w-7/12 border bg-white rounded-2xl border-zinc-300">
+        <div className="flex justify-between px-5 py-4">
+          <p className="font-semibold text-xl">Order List</p>
+          <a href="/orders" className="font-medium">View all</a>
         </div>
-        <div className="flex flex-row">
+        <div className="flex flex-row bg-gray-200 px-5 py-3 border-y border-zinc-300">
           {categoryKeys.map((categoryKey, index) => (
             <div
               key={index}
               className={`flex flex-col items-start text-center pr-3 flex-1`}
             >
-              <p className="text-zinc-500 font-semibold">{categories[categoryKey]}</p>
+              <p className="text-zinc-500 text-sm font-medium">{categories[categoryKey]}</p>
             </div>
           ))}
         </div>
@@ -64,14 +62,14 @@ const OrderList = () => {
           {orders.map((order, orderIndex) => (
             <div
               key={orderIndex}
-              className="flex flex-row items-center py-2"
+              className="flex flex-row items-center py-2 px-5 duration-100 border-y border-transparent hover:bg-zinc-100 hover:border-zinc-200"
             >
               {categoryKeys.map((categoryKey, categoryIndex) => (
                 <div
                   key={categoryIndex}
                   className={`flex flex-col flex-1 items-start pr-3`}
                 >
-                  <p className="font-medium">{order[categoryKey]}</p>
+                  <p className="text-sm font-medium">{order[categoryKey]}</p>
                 </div>
               ))}
             </div>

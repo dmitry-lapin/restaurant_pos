@@ -5,29 +5,30 @@ import { database } from "../../firebase_config"
 
 const PieChart = () => {
   const [chartData, setChartData] = useState([]);
-
+  
   useEffect(() => {
+    const currentDate = new Date();
+    const year = currentDate.getFullYear();
+    const month = (currentDate.getMonth() + 1).toString().padStart(2, '0');
+    const currentMonth = `${year}-${month}`;
 
-    const databaseRef = ref(database, 'statistics'); 
+    const databaseRef = ref(database, `statistics/${currentMonth}`); 
+
     get(databaseRef)
       .then((snapshot) => {
         if (snapshot.exists()) {
           const statisticsData = snapshot.val();
-          const lastMonth = Object.keys(statisticsData).pop();
+          const dishesData = statisticsData.dishes || {};
 
-          if (lastMonth) {
-            const dishesData = statisticsData[lastMonth].dishes || {};
-          
-            const pieChartData = Object.entries(dishesData)
-              .map(([name, quantity]) => ({
-                name,
-                value: quantity,
-              }))
-              .sort((a, b) => b.value - a.value) 
-              .slice(0, 6); 
-          
-            setChartData(pieChartData);
-          }
+          const pieChartData = Object.entries(dishesData)
+            .map(([name, quantity]) => ({
+              name,
+              value: quantity,
+            }))
+            .sort((a, b) => b.value - a.value)
+            .slice(0, 6);
+
+          setChartData(pieChartData);
         }
       })
       .catch((error) => {

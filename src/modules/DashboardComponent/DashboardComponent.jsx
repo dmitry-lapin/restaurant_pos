@@ -28,8 +28,8 @@ const DashboardComponent = () => {
                     <ChartWrapper name="Revenue" chart={<ChartPie />}/>
                 </div>
                 <div className="w-full flex flex-col md:flex-row flex-grow space-y-5 md:space-y-0 md:space-x-5">
-                    <OrderList />
-                    <Report />
+                { /* <OrderList />
+                    <Report /> */ }
                 </div>
             </div>
         </div>
