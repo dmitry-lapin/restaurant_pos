@@ -2,7 +2,7 @@ import React from "react";
 
 const SaveTabsBtn = () => { 
     return(
-        <button className="self-start w-fit px-5 font-medium mt-10 bg-sky-500 rounded-lg py-2.5 hover:bg-sky-700 duration-100 text-white" onClick={() => ({})}>
+        <button className="self-start bg-sky-500 p-3 mt-4 rounded-lg font-medium text-gray-200 hover:bg-sky-600 duration-100" onClick={() => ({})}>
             Save changes
         </button>
     );

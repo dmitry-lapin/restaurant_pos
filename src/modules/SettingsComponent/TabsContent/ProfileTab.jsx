@@ -35,23 +35,34 @@ const UserProfile = () => {
   return (
     <div className="divide-y divide-zinc-300">
       {fields.map(({ label, state, value }, index) => (
-        <div className="flex items-center justify-between" key={state}>
-          <div>
+        <div className="flex justify-between py-3" key={state}>
+          <div className="space-y-1">
             <p className="font-semibold text-normal">{label}</p>
-            <p>{value}</p>
+            {editableField === state ? (
+              <input
+              type="text"
+              value={data[state]}
+              onChange={(e) => handleFieldChange(state, e.target.value)}
+              className="border border-zinc-300 rounded px-1.5 py-0.5 focus:outline-none focus:border-indigo-600 focus:shadow-md"
+            />
+            
+            ) : (
+              <p className="text-zinc-600 font-medium">{data[state]}</p>
+            )}
           </div>
           {editableField === state ? (
-            <>
-              <input
-                type="text"
-                value={data[state]}
-                onChange={(e) => handleFieldChange(state, e.target.value)}
-              />
-              <button onClick={handleSave}>Save</button>
-              <button onClick={handleCancel}>Cancel</button>
-            </>
+            <div className="flex items-end">
+              <div className="flex flex-row space-x-1">
+                <button className="border hover:border-green-400 hover:bg-green-300 hover:text-green-600 px-2 py-1 rounded-md h-fit text-md font-medium duration-100" onClick={handleSave}>Save</button>
+                <button className="border hover:border-red-400 hover:bg-red-300 hover:text-red-600 rounded-md px-1.5 py-0.5 duration-100" onClick={handleCancel}>
+                  <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.3} stroke="currentColor" className="w-6 h-auto ">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
+                  </svg>
+                </button>
+              </div>
+            </div>
           ) : (
-            <button onClick={() => handleEdit(state)}>Edit</button>
+            <button className="hover:underline font-semibold duration-100" onClick={() => handleEdit(state)}>Edit</button>
           )}
         </div>
       ))}
