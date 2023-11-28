@@ -4,7 +4,7 @@ import TextHeader from "../../UI/textHeader";
 import General from "./TabsContent/GeneralTab";
 import Profile from "./TabsContent/ProfileTab";
 import Security from "./TabsContent/SecurityTab";
-import Email from "./TabsContent/EmailTab";
+import Notifications from "./TabsContent/NotificationsTab";
 
 import BtnCategoryWrapper from "./BtnWrapper/BtnCategoryWrapper"; //Wrapper for setting category button.
 import TabWrapper from "./TabsContent/TabWrapper";
@@ -93,7 +93,7 @@ const SettingsComponent = () => {
             { activeCategory === 'general' && <TabWrapper><General /></TabWrapper> }
             { activeCategory === 'account' && <TabWrapper><Profile /></TabWrapper> }
             { activeCategory === 'security' && <TabWrapper><Security /></TabWrapper> }
-            { activeCategory === 'notifications' && <TabWrapper><Email /></TabWrapper> }
+            { activeCategory === 'notifications' && <TabWrapper><Notifications /></TabWrapper> }
             </div>
         </div>
     );

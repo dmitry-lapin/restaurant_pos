@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import SaveTabsBtn from "../../../UI/SaveChangesTabsBtn";
 
 const UserProfile = () => {
   const fields = [
@@ -33,6 +34,7 @@ const UserProfile = () => {
   };
 
   return (
+    <div className="space-y-12">
     <div className="divide-y divide-zinc-300">
       {fields.map(({ label, state, value }, index) => (
         <div className="flex justify-between py-3" key={state}>
@@ -52,9 +54,9 @@ const UserProfile = () => {
           </div>
           {editableField === state ? (
             <div className="flex items-end">
-              <div className="flex flex-row space-x-1">
-                <button className="border hover:border-green-400 hover:bg-green-300 hover:text-green-600 px-2 py-1 rounded-md h-fit text-md font-medium duration-100" onClick={handleSave}>Save</button>
-                <button className="border hover:border-red-400 hover:bg-red-300 hover:text-red-600 rounded-md px-1.5 py-0.5 duration-100" onClick={handleCancel}>
+              <div className="flex flex-row space-x-1 mr-4">
+                <button className="bg-green-600 text-white px-2 py-1 rounded-md h-fit text-md font-medium duration-100" onClick={handleSave}>Save</button>
+                <button className="" onClick={handleCancel}>
                   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.3} stroke="currentColor" className="w-6 h-auto ">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
                   </svg>
@@ -66,6 +68,9 @@ const UserProfile = () => {
           )}
         </div>
       ))}
+    </div>
+
+    <SaveTabsBtn />
     </div>
   );
 };
