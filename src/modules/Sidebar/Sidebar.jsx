@@ -31,7 +31,7 @@ const Sidebar = () => {
 
   return (
     <div className={menuStyling}>
-      <ModuleHeaderName bgColor="bg-zinc-400 hover:bg-zinc-300 dark:bg-zinc-900 dark:hover:bg-zinc-800 duration-100">
+      <ModuleHeaderName bgColor="bg-blue-300 hover:bg-opacity-75 dark:bg-zinc-900 dark:hover:bg-zinc-800 duration-100">
         <MenuTogglerBtn isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} />
         <MainLogo />
         {location.pathname === '/food_catalog' && <CheckoutBtn displayOnBig={false} />}
