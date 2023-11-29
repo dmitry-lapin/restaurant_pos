@@ -15,6 +15,9 @@ const Profile = ({type = "password", password = "admin"}) => {
 
     return(
         <div className="flex flex-col w-1/2 space-y-6">
+            <p className="text-gray-600 text-sm">
+                Manage account security settings and configure security preferences.
+            </p>
             <div className="flex p-3 items-center space-x-4 text-lg">
                 <p className="font-medium">Password: </p>
 

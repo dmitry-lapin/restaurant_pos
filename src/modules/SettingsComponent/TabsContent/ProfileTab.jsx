@@ -34,6 +34,10 @@ const UserProfile = () => {
   };
 
   return (
+    <>
+      <p className="text-gray-600 text-sm mb-6">
+        Edit your personal information and manage account details.
+      </p>
     <div className="space-y-12">
     <div className="divide-y divide-zinc-300">
       {fields.map(({ label, state, value }, index) => (
@@ -55,7 +59,7 @@ const UserProfile = () => {
           {editableField === state ? (
             <div className="flex items-end">
               <div className="flex flex-row space-x-1 mr-4">
-                <button className="bg-green-600 text-white px-2 py-1 rounded-md h-fit text-md font-medium duration-100" onClick={handleSave}>Save</button>
+                <button className="bg-indigo-600 text-white px-2 py-1 rounded-md h-fit text-md font-medium duration-100" onClick={handleSave}>Save</button>
                 <button className="" onClick={handleCancel}>
                   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.3} stroke="currentColor" className="w-6 h-auto ">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
@@ -72,6 +76,7 @@ const UserProfile = () => {
 
     <SaveTabsBtn />
     </div>
+    </>
   );
 };
 

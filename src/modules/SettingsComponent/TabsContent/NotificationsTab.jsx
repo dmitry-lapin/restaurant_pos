@@ -24,7 +24,7 @@ const Notifications = () => {
                   id={`push-${label}`}
                   name="push-notifications"
                   type="checkbox"
-                  className="h-3.5 w-3.5 mt-1 border hover:outline-2 accent-indigo-600 checked:bg-indigo-600 "
+                  className="h-4 w-4 mt-1 border hover:outline-2 accent-indigo-600 checked:bg-indigo-600 "
                 />
                 <div className="flex flex-col">
                   <label

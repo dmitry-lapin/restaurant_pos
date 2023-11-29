@@ -7,6 +7,7 @@ import Modal from "../modules/Modal/Modal";
 import TableNumberModal from "../modules/TableNumberModal/TableNumberModal"
 
 function FoodPage() {
+
     const isOpen = useSelector(state => state.ToggleTableModal.isToggleModalVisible);
     const modalVisibility = useSelector(state => state.ModalSlice.isModalVisible);
     

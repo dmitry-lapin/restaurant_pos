@@ -29,7 +29,7 @@ const InfoContainer = () => {
                 </ul>
             </div>
             <div className="bg-zinc-900 w-full border-t-2 border-zinc-500 px-4 py-3 rounded-b-lg text-white font-normal text-sm md:text-xs flex space-x-3 items-center">
-                <img className="w-10 h-10" src={AuthorShipLogo} alt="Authorship logo"/>
+                <img className="w-8 h-8" src={AuthorShipLogo} alt="Authorship logo"/>
                 <h1>Designed by Lapin Dmytro, design by Ronas IT</h1>
             </div>
         </div>

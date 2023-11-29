@@ -7,6 +7,8 @@ import MenuTogglerBtn from '../../UI/MenuTogglerBtn';
 import MenuWrapper from './components/MenuWrapper/MenuWrapper';
 import CheckoutBtn from '../../UI/CheckoutBtn';
 import UserData from './components/userData/userData';
+import ThemeToggler from './components/ThemeToggler/ThemeToggler';
+
 import { useLocation } from 'react-router-dom';
 
 const Sidebar = () => {
@@ -38,7 +40,10 @@ const Sidebar = () => {
         <MenuWrapper>
           <Sidemenu />
           <div>
-            <UserData />
+            <div className="flex">
+              <UserData />
+              <ThemeToggler />
+            </div>
             <InfoContainer />
           </div>
         </MenuWrapper>
