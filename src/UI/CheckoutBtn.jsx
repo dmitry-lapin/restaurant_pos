@@ -5,7 +5,7 @@ import { useDispatch } from 'react-redux';
 import { toggleVisibility } from "../modules/Order_details/slices/OrderDetailsSlice";
 import { useSelector } from "react-redux";
 
-const CheckoutBtn = ({ displayOnBig, bgColor = "hover:bg-zinc-800" }) => {
+const CheckoutBtn = ({ displayOnBig, bgColor = " hover:bg-zinc-300 dark:hover:bg-zinc-800 " }) => {
     const dispatch = useDispatch();
     let amountOfDishesLength = useSelector(
       (state) => state.OrdersFeed.SelectedDishes
