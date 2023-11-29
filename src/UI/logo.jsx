@@ -10,7 +10,7 @@ const Logo = ({ params }) => {
         </div>
         <div className="hidden lg:flex flex-col self-center">
           <p className={textStyling}>Homer's Pub</p>
-          <p className="text-red-600 text-sm">Sip, Savor, Repeat!</p>
+          <p className="text-zinc-800 dark:text-red-600 text-sm">Sip, Savor, Repeat!</p>
         </div>
       </div>
     );

@@ -2,6 +2,8 @@
 @tailwind components;
 @tailwind utilities;
 
+
+
 body {
   margin: 0;
   font-family: 'Montserrat', sans-serif;
@@ -41,19 +43,16 @@ code {
   filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.7));
 }
 
-/* Для WebKit браузеров (Chrome, Safari) */
-/* Скрываем стандартную полосу прокрутки */
+
 ::-webkit-scrollbar {
   height: 5px; 
   width: 5px;
 }
 
-/* Фон полосы прокрутки */
 ::-webkit-scrollbar-track {
-  background: #f1f1f1; /* Цвет фона */
+  background: #f1f1f1;
 }
 
-/* Стиль ползунка (бегунка) полосы прокрутки */
 ::-webkit-scrollbar-thumb {
   background-color: #999;
   border-radius: 5px; 
