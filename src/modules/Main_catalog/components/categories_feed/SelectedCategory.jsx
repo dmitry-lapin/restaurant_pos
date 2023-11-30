@@ -7,10 +7,8 @@ import { useSelector } from "react-redux";
 import { database } from "../../../../firebase_config";
 import { ref, onValue, off } from "firebase/database";
 
-const ScrollContext = createContext(false);
-
 const SelectedCategory = () => {
-  //Context for passing in feed_scroll_wrapper component scroll var condition.
+  
 
   const [dishes, setDishes] = useState({});
   const selectedCategory = useSelector((state) => state.Categories.selectedCategory);
@@ -49,6 +47,7 @@ const SelectedCategory = () => {
                     <ProductCard key={key} dish={data} />
                   ))
                 ) : null}
+                scroll={false}
               />
             </React.Fragment>
           ))}
