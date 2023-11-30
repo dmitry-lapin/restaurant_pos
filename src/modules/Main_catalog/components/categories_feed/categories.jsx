@@ -31,7 +31,7 @@ const Categories = () => {
 
     return(
         <FeedWrapper>
-            <TextHeader text="Categories" color="text-black" categoryTopic={true} size="text-md md:text-lg pt-4"/>
+            <TextHeader text="Categories" color="text-zinc-950 dark:text-gray-300" categoryTopic={true} size="text-md md:text-lg pt-4"/>
             <CategoryFeed toWork={
                 categories.map((category, index) => (
                     <CategoryBtn key={index} name={category.name} image={category.image} />
