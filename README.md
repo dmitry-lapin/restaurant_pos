@@ -17,4 +17,4 @@ GodDish POS - web application for managing orders and tracking restaurant statis
 1. Clone repo:
 
 ```bash
-git clone https://github.com/ваш_пользователь/restaurant-pos.git
+git clone https://github.com/dmitry-lapin/restaurant-pos.git
