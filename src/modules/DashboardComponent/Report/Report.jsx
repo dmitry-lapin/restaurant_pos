@@ -1,5 +1,4 @@
 import React from "react";
-import ReportImg from "../../../assets/common_icons/report.gif"
 
 const Report = () => {
     const currentDate = new Date();
@@ -15,7 +14,6 @@ const Report = () => {
             </div>
             <div className="flex flex-row w-full justify-center items-center space-x-0 md:space-x-2 py-3 md:py-0">
                 <div className="">
-                    <img src={ReportImg} className="w-52 h-52 md:w-24 md:h-24 xl:w-32 xl:h-32 2xl:w-40 2xl:h-40" alt="report_image"/>
                 </div>
                 <div className=" md:w-fit text-3xl md:text-lg xl:text-xl 2xl:text-2xl font-bold uppercase">
                     <p className="">Here is <br/>your <br/><span className="text-5xl md:text-xl xl:text-3xl 2xl:text-5xl text-blue-700">report</span></p>
