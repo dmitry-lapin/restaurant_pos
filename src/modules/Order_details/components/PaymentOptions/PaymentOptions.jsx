@@ -29,7 +29,7 @@ const PaymentOptions = () => {
                         key={index}
                         onClick={() => handlePaymentMethod(value)}
                         className={`${
-                            selectedPaymentMethod === value ? 'bg-black hover:bg-black dark:bg-white dark:hover:bg-white text-gray-300 dark:text-zinc-950' : 'text-gray-950 dark:text-zinc-200 bg-zinc-400 hover:bg-zinc-500 dark:bg-zinc-800 dark:hover:bg-zinc-700'
+                            selectedPaymentMethod === value ? 'bg-zinc-900 hover:bg-zinc-900 dark:bg-slate-100 dark:hover:bg-slate-200 text-gray-300 dark:text-zinc-950' : 'text-gray-950 dark:text-zinc-200 bg-zinc-400 hover:bg-zinc-500 dark:bg-zinc-800 dark:hover:bg-zinc-700'
                         }  basis-1/3`}
                     >
                         {value}
@@ -39,7 +39,7 @@ const PaymentOptions = () => {
             <hr className="border border-zinc-950 dark:border-gray-300"/>
             <button
                 onClick={handleToggleModal}
-                className={`text-black bg-slate-100 hover:bg-slate-200 duration-100 rounded-2xl font-semibold text-2xl h-16 ${
+                className={`text-white bg-zinc-600 hover:bg-zinc-800 dark:text-black dark:bg-slate-100 dark:hover:bg-slate-200 duration-100 rounded-2xl font-semibold text-2xl h-16 ${
                     isFeedEmpty === 0 || isTableSelected == null ? 'disabled:opacity-50 disabled:pointer-events-none' : ''
                     }`}
                 disabled={isFeedEmpty === 0 || isTableSelected == null}
