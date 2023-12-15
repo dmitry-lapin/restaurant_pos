@@ -1,11 +1,16 @@
 import React, { useState } from "react";
+import { useDispatch } from "react-redux";
+
+import { toggleDarkMode } from "./slices/darkModeVisibility";
 
 const ThemeToggler = () => {
+    const dispatch = useDispatch();
     const [isThemeDark, toggleTheme] = useState(false);
 
     const toggleThemeHandler  = () => {
         document.documentElement.classList.toggle("dark");
         toggleTheme(!isThemeDark);
+        dispatch(toggleDarkMode());
     }
      
     

@@ -38,6 +38,7 @@ const LinearChart = () => {
   const { xAxisData, seriesData } = chartData;
 
   const option = {
+    darkMode: false,
     title: {
       text: 'Revenue',
     },
