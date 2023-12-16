@@ -62,9 +62,9 @@ const SettingsComponent = () => {
   ];
 
     return(
-        <div className="flex flex-1 flex-col bg-gray-200">
-            <ModuleHeaderName bgColor="bg-white">
-                <TextHeader text="Settings" color="text-black" size="text-xl" />
+        <div className="flex flex-1 flex-col bg-zinc-100 dark:bg-zinc-800">
+            <ModuleHeaderName bgColor="bg-zinc-200 dark:bg-stone-950">
+                <TextHeader text="Settings" color="text-zinc-950 dark:text-gray-300" size="text-xl" />
             </ModuleHeaderName>
 
             <div className="self-center flex-1 py-10 w-10/12">
