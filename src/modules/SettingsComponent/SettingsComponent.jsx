@@ -71,7 +71,7 @@ const SettingsComponent = () => {
                 {!activeCategory && (
                 
 
-                <div className="grid grid-cols-3 gap-5">
+                <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-5">
                     {categories.map(({ category, icon, description }) => (
                         <BtnCategoryWrapper
                             key={category}
