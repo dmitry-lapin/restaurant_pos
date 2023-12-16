@@ -2,7 +2,7 @@ import React from "react";
 
 const SaveTabsBtn = () => { 
     return(
-        <div className="flex space-x-6 items-center font-medium">
+        <div className="flex space-x-6 items-center font-medium text-zinc-950 dark:text-gray-300">
             <button className="capitalize">
                 cancel
             </button>
