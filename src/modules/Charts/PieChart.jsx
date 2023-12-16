@@ -3,8 +3,11 @@ import ReactEChart from 'echarts-for-react';
 import { ref, get } from 'firebase/database';
 import { database } from "../../firebase_config" 
 
+import { useSelector } from 'react-redux';
+
 const PieChart = () => {
   const [chartData, setChartData] = useState([]);
+  const darkMode = useSelector((state) => state.DarkModeToggler.isDark);
   
   useEffect(() => {
     const currentDate = new Date();
@@ -34,9 +37,10 @@ const PieChart = () => {
       .catch((error) => {
         console.error('Error getting data from Firebase:', error);
       });
-  }, []);
+  }, [darkMode]);
 
   const option = {
+    dark: darkMode,
     title: {
       text: 'Most popular dishes',
       left: 'center',
@@ -55,6 +59,7 @@ const PieChart = () => {
         type: 'pie',
         radius: '65%',
         data: chartData, 
+        top: "-5%",
         emphasis: {
           itemStyle: {
             shadowBlur: 10,

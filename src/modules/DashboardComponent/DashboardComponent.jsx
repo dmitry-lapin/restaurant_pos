@@ -24,8 +24,8 @@ const DashboardComponent = () => {
                     ))}
                 </div>
                 <div className="flex flex-col md:flex-row w-full space-y-5 md:space-y-0 md:space-x-5 ">
-                    <ChartWrapper name="Revenue" chart={<LinearChart />}/>
-                    <ChartWrapper name="Revenue" chart={<ChartPie />}/>
+                    <ChartWrapper chart={<LinearChart />}/>
+                    <ChartWrapper chart={<ChartPie />}/>
                 </div>
                 <div className="w-full flex flex-col md:flex-row flex-grow space-y-5 md:space-y-0 md:space-x-5">
                 { /* <OrderList />
