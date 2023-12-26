@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import ModuleHeaderName from "../../UI/ModuleHeaderName";
+import { PageHeaderName } from "../../UI/PageHeaderName";
 import TextHeader from "../../UI/textHeader";
 import General from "./TabsContent/GeneralTab";
 import Profile from "./TabsContent/ProfileTab";
@@ -63,9 +63,9 @@ const SettingsComponent = () => {
 
     return(
         <div className="flex flex-1 flex-col bg-zinc-100 dark:bg-zinc-800">
-            <ModuleHeaderName bgColor="bg-zinc-200 dark:bg-stone-950">
-                <TextHeader text="Settings" color="text-zinc-950 dark:text-gray-300" size="text-xl" />
-            </ModuleHeaderName>
+            <PageHeaderName>
+              Settings
+            </PageHeaderName>
 
             <div className="self-center flex-1 py-5 md:py-10 w-10/12">
                 {!activeCategory && (
