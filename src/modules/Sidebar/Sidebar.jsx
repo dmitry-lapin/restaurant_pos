@@ -31,7 +31,7 @@ const Sidebar = () => {
 
   return (
     <div className={menuStyling}>
-      <div className="bg-zinc-300 dark:bg-zinc-900">
+      <div className="flex items-center py-3 md:py-0 px-5 md:px-0 md:block bg-zinc-300 dark:bg-zinc-900">
         <MenuTogglerBtn isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} />
         <MainLogo />
         {location.pathname === '/food_catalog' && <CheckoutBtn displayOnBig={false} />}

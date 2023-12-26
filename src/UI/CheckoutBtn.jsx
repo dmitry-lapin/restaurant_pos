@@ -5,7 +5,7 @@ import { useDispatch } from 'react-redux';
 import { toggleVisibility } from "../modules/Order_details/slices/OrderDetailsSlice";
 import { useSelector } from "react-redux";
 
-const CheckoutBtn = ({ displayOnBig, bgColor = " hover:bg-zinc-300 dark:hover:bg-zinc-800 " }) => {
+const CheckoutBtn = ({ displayOnBig }) => {
     const dispatch = useDispatch();
     let amountOfDishesLength = useSelector(
       (state) => state.OrdersFeed.SelectedDishes
@@ -17,16 +17,15 @@ const CheckoutBtn = ({ displayOnBig, bgColor = " hover:bg-zinc-300 dark:hover:bg
     };
   
     let styling =
-      "duration-100 p-2 rounded cursor-pointer hover:bg-zinc-300 dark:hover:bg-stone-800" +
-      (displayOnBig ? " hidden md:block " : "block md:hidden ") +
-      bgColor;
+      "duration-100 p-2 rounded cursor-pointer hover:bg-zinc-300 dark:hover:bg-stone-800 hover:bg-zinc-300 dark:hover:bg-zinc-800" +
+      (displayOnBig ? " hidden md:block " : "block md:hidden ");
     return (
       <div className={styling} onClick={handleCheckoutClick}>
         <div className="relative">
-          <span className="absolute top-0 right-0 bg-red-500 text-white font-semibold rounded-full text-sm py-0.5 px-1">
+          <span className="absolute top-0 right-0 bg-red-500 text-white font-semibold rounded-full text-xs md:text-sm py-0 px-0.5 md:py-0.5 md:px-1">
                 {amountOfDishesLength}
           </span>
-          <img className="w-10 h-10" src={CheckoutImg} alt="Checkout" />
+          <img className="w-8 h-8 md:w-10 md:h-10" src={CheckoutImg} alt="Checkout" />
         </div>
       </div>
     );
