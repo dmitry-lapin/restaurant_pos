@@ -22,7 +22,7 @@ const PaymentOptions = () => {
     }
 
     return (
-        <div className="flex flex-col bg-zinc-300 dark:bg-zinc-900 h-fit mb-2 mx-2 rounded-2xl p-4 space-y-4 basis-2/12">
+        <div className="flex flex-col bg-zinc-300 dark:bg-zinc-900 mx-2 rounded-2xl p-4 space-y-4">
             <div className="flex flex-row space-x-3">
                 {["Cash", "Debit", "Crypto"].map((value, index) => (
                     <PaymentBtn
@@ -39,7 +39,7 @@ const PaymentOptions = () => {
             <hr className="border border-zinc-950 dark:border-gray-300"/>
             <button
                 onClick={handleToggleModal}
-                className={`text-white bg-zinc-600 hover:bg-zinc-800 dark:text-black dark:bg-slate-100 dark:hover:bg-slate-200 duration-100 rounded-2xl font-semibold text-2xl h-16 ${
+                className={`text-white bg-zinc-600 hover:bg-zinc-800 dark:text-black dark:bg-slate-100 dark:hover:bg-slate-200 duration-100 rounded-2xl font-semibold text-2xl h-14 ${
                     isFeedEmpty === 0 || isTableSelected == null ? 'disabled:opacity-50 disabled:pointer-events-none' : ''
                     }`}
                 disabled={isFeedEmpty === 0 || isTableSelected == null}
