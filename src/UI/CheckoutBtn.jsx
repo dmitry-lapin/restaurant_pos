@@ -17,7 +17,7 @@ const CheckoutBtn = ({ displayOnBig, bgColor = " hover:bg-zinc-300 dark:hover:bg
     };
   
     let styling =
-      "duration-100 p-2 rounded cursor-pointer" +
+      "duration-100 p-2 rounded cursor-pointer hover:bg-zinc-300 dark:hover:bg-stone-800" +
       (displayOnBig ? " hidden md:block " : "block md:hidden ") +
       bgColor;
     return (
