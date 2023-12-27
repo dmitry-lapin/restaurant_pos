@@ -10,7 +10,7 @@ const Sidemenu = () => {
     return (
       <ul className="flex flex-col text-zinc-950 dark:text-gray-300 font-semibold m-3 space-y-3">
         {menuData.map(([title, url, image]) => (
-          <Link to={url} key={url} className={ location.pathname === url ? ( linkStyle + ' bg-zinc-300 dark:bg-zinc-800 ' ) : ( linkStyle + ' rounded-xl hover:bg-zinc-300 dark:hover:bg-zinc-800 duration-100' ) }>
+          <Link to={url} key={url} className={ location.pathname === url ? ( linkStyle + ' bg-zinc-300 dark:bg-zinc-800 ' ) : ( linkStyle + ' rounded-xl hover:bg-zinc-300 dark:hover:bg-zinc-800' ) }>
             <MenuItem image={image}>
               <p className="md:hidden lg:block">{title}</p>
             </MenuItem>

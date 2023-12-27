@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import ModuleHeaderName from "../../UI/ModuleHeaderName";
+import { PageHeaderName } from "../../UI/PageHeaderName";
 import TextHeader from "../../UI/textHeader";
 import General from "./TabsContent/GeneralTab";
 import Profile from "./TabsContent/ProfileTab";
@@ -62,16 +62,16 @@ const SettingsComponent = () => {
   ];
 
     return(
-        <div className="flex flex-1 flex-col bg-gray-200">
-            <ModuleHeaderName bgColor="bg-white">
-                <TextHeader text="Settings" color="text-black" size="text-xl" />
-            </ModuleHeaderName>
+        <div className="flex flex-1 flex-col bg-zinc-100 dark:bg-zinc-800">
+            <PageHeaderName>
+              Settings
+            </PageHeaderName>
 
-            <div className="self-center flex-1 py-10 w-10/12">
+            <div className="self-center flex-1 py-5 md:py-10 w-10/12">
                 {!activeCategory && (
                 
 
-                <div className="grid grid-cols-3 gap-5">
+                <div className="grid md:grid-cols-2 xl:grid-cols-3 gap-5">
                     {categories.map(({ category, icon, description }) => (
                         <BtnCategoryWrapper
                             key={category}
@@ -84,13 +84,13 @@ const SettingsComponent = () => {
                 </div>
                 )}
             { activeCategory &&
-             <div className="flex items-center space-x-5 mb-10">
-              <button className="hover:bg-zinc-300 duration-100 p-1 rounded-xl" onClick={goBack}>
-                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-8 h-8">
+             <div className="flex items-center space-x-5 mb-6 md:mb-10 text-zinc-950 dark:text-gray-300">
+              <button className="hover:bg-zinc-300 dark:hover:bg-zinc-900 duration-100 p-1 rounded-xl " onClick={goBack}>
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" className="w-6 h-6 md:w-8 md:h-8">
                   <path fillRule="evenodd" d="M7.72 12.53a.75.75 0 010-1.06l7.5-7.5a.75.75 0 111.06 1.06L9.31 12l6.97 6.97a.75.75 0 11-1.06 1.06l-7.5-7.5z" clipRule="evenodd" />
                 </svg>
               </button>
-              <p className="capitalize font-semibold text-xl">{activeCategory}</p>
+              <p className="capitalize font-semibold text-lg md:text-xl">{activeCategory}</p>
              </div> }
             { activeCategory === 'general' && <TabWrapper><General /></TabWrapper> }
             { activeCategory === 'account' && <TabWrapper><Profile /></TabWrapper> }

@@ -11,12 +11,12 @@ const Notifications = () => {
 
   return (
     <div className="space-y-6">
-      <p className="text-gray-600 text-sm">
+      <p className="text-gray-600 dark:text-zinc-300 text-sm">
         We'll always let you know about important changes, but you pick what else you want to hear about.
       </p>
       <form className="space-y-12">
         <fieldset className="space-y-3">
-          <legend className="font-medium capitalize">push notifications</legend>
+          <legend className="font-medium capitalize text-zinc-950 dark:text-gray-300">push notifications</legend>
           <div className="space-y-3 ml-5">
             {Object.entries(emailOptions).map(([label, content]) => (
               <div key={label} className="flex items-start gap-x-3">
@@ -29,11 +29,11 @@ const Notifications = () => {
                 <div className="flex flex-col">
                   <label
                     htmlFor={`push-${label}`}
-                    className="text-start text-sm font-medium capitalize"
+                    className="text-start text-sm font-medium capitalize text-zinc-950 dark:text-gray-300"
                   >
                     {label}
                   </label>
-                  <p className="text-gray-500 text-sm">{content}</p>
+                  <p className="text-gray-500 dark:text-gray-400 text-sm">{content}</p>
                 </div>
               </div>
             ))}

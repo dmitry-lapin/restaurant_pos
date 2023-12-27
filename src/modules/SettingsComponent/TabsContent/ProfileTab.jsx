@@ -35,15 +35,15 @@ const UserProfile = () => {
 
   return (
     <>
-      <p className="text-gray-600 text-sm mb-6">
+      <p className="text-gray-600 dark:text-zinc-300 text-sm">
         Edit your personal information and manage account details.
       </p>
     <div className="space-y-12">
-    <div className="divide-y divide-zinc-300">
+    <div className="divide-y divide-zinc-300 dark:divide-zinc-950">
       {fields.map(({ label, state, value }, index) => (
         <div className="flex justify-between py-3" key={state}>
           <div className="space-y-1">
-            <p className="font-semibold text-normal">{label}</p>
+            <p className="text-zinc-950 dark:text-gray-300 font-semibold text-normal">{label}</p>
             {editableField === state ? (
               <input
               type="text"
@@ -53,14 +53,14 @@ const UserProfile = () => {
             />
             
             ) : (
-              <p className="text-zinc-600 font-medium">{data[state]}</p>
+              <p className="text-gray-600 dark:text-zinc-400 font-medium">{data[state]}</p>
             )}
           </div>
           {editableField === state ? (
             <div className="flex items-end">
               <div className="flex flex-row space-x-1 mr-4">
                 <button className="bg-indigo-600 text-white px-2 py-1 rounded-md h-fit text-md font-medium duration-100" onClick={handleSave}>Save</button>
-                <button className="" onClick={handleCancel}>
+                <button className="text-zinc-950 dark:text-gray-300" onClick={handleCancel}>
                   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.3} stroke="currentColor" className="w-6 h-auto ">
                     <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
                   </svg>
@@ -68,7 +68,7 @@ const UserProfile = () => {
               </div>
             </div>
           ) : (
-            <button className="hover:underline font-semibold duration-100" onClick={() => handleEdit(state)}>Edit</button>
+            <button className="text-zinc-950 dark:text-gray-300 hover:underline font-semibold duration-100" onClick={() => handleEdit(state)}>Edit</button>
           )}
         </div>
       ))}

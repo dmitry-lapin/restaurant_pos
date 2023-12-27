@@ -1,26 +1,25 @@
 import React, { useState } from 'react';
-import DatePicker from 'react-datepicker';
-import 'react-datepicker/dist/react-datepicker.css';
 
 const DateTimePicker = () => {
-    const [selectedDate, setSelectedDate] = useState(null);
-  
-    const handleDateChange = (date) => {
-      setSelectedDate(date);
-    };
-  
-    return (
-      <div>
-        <h2>Select Date and Time</h2>
-        <DatePicker
-          selected={selectedDate}
-          onChange={handleDateChange}
-          showTimeSelect
-          dateFormat="MMMM d, yyyy h:mm aa"
-          
-        />
-      </div>
-    );
+  const [selectedDate, setSelectedDate] = useState(new Date());
+
+  const handleDateChange = (event) => {
+    const newDate = new Date(event.target.value);
+    setSelectedDate(newDate);
+  };
+
+  return (
+    <div>
+      <h2>Select Date and Time</h2>
+      
+      <input
+        type="datetime-local"
+        value={selectedDate.toISOString().slice(0, -8)}
+        onChange={handleDateChange}
+        className=''
+      />
+    </div>
+  );
   };
 
   export default DateTimePicker; 

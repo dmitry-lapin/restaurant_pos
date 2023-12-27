@@ -25,9 +25,9 @@ const CommonOrderDetails = () => {
     }
 
     return(
-        <div className="p-7 font-semibold flex justify-between">
+        <div className="px-7 py-4 md:py-7 font-semibold flex justify-between">
             <div className="flex flex-row space-x-3 items-center">
-                <button onClick={handleTableChange} className="text-white text-lg capitalize">Table {tableNumber}</button>
+                <button onClick={handleTableChange} className="text-zinc-950 dark:text-gray-300 text-lg capitalize">Table {tableNumber}</button>
             </div>
             <div className="w-1/2">
                 <Datepicker

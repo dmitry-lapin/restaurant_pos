@@ -27,15 +27,15 @@ const Sidebar = () => {
     setIsMenuOpen(!isMenuOpen);
   }
 
-  let menuStyling = `flex flex-col md:flex w-full md:flex-col md:h-screen bg-zinc-200 dark:bg-stone-950 md:w-fit lg:w-3/12 md:space-y-3 md:border-r md:border-r-1 dark:border-zinc-950 border-zinc-300 ${isMenuOpen ? "h-screen space-y-10 absolute top-0 left-0 md:static z-10 " : ""}`;
+  let menuStyling = `flex flex-col md:flex w-full md:flex-col md:h-screen bg-zinc-200 dark:bg-stone-950 md:w-fit lg:w-3/12 md:space-y-3 md:border-r md:border-r-1 dark:border-zinc-950 border-zinc-300 ${isMenuOpen ? "h-screen absolute top-0 left-0 md:static z-10 " : ""}`;
 
   return (
     <div className={menuStyling}>
-      <ModuleHeaderName bgColor="bg-zinc-300 hover:bg-opacity-75 dark:bg-zinc-900 dark:hover:bg-zinc-800 duration-100">
+      <div className="flex items-center py-3 md:py-0 px-5 md:px-0 md:block bg-zinc-300 dark:bg-zinc-900">
         <MenuTogglerBtn isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} />
         <MainLogo />
         {location.pathname === '/food_catalog' && <CheckoutBtn displayOnBig={false} />}
-      </ModuleHeaderName>
+      </div>
       {isMenuOpen && (
         <MenuWrapper>
           <Sidemenu />
