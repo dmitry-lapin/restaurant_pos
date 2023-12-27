@@ -25,7 +25,7 @@ const CheckoutBtn = ({ displayOnBig }) => {
           <span className="absolute top-0 right-0 bg-red-500 text-white font-semibold rounded-full text-xs md:text-sm py-0 px-0.5 md:py-0.5 md:px-1">
                 {amountOfDishesLength}
           </span>
-          <img className="w-10 h-8 md:w-10 md:h-10" src={CheckoutImg} alt="Checkout" />
+          <img className="w-8 md:w-10 md:h-10" src={CheckoutImg} alt="Checkout" />
         </div>
       </div>
     );

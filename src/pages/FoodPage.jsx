@@ -12,7 +12,7 @@ function FoodPage() {
     const modalVisibility = useSelector(state => state.ModalSlice.isModalVisible);
     
     return (
-      <div className="flex flex-col md:flex-row h-screen">
+      <div className="flex flex-col md:flex-row">
         {isOpen && <TableNumberModal />}
         <Sidebar/>
         <Catalog /> 
