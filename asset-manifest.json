@@ -1,13 +1,12 @@
 {
   "files": {
-    "main.css": "/restaurant_pos/static/css/main.0c5779b7.css",
-    "main.js": "/restaurant_pos/static/js/main.c4f89ff1.js",
-    "static/media/nothing_in_cart.gif": "/restaurant_pos/static/media/nothing_in_cart.5a7793711acdf641b5fd.gif",
-    "static/media/report.gif": "/restaurant_pos/static/media/report.4f5ecc5193d5515e79ed.gif",
+    "main.css": "/restaurant_pos/static/css/main.0702ad8a.css",
+    "main.js": "/restaurant_pos/static/js/main.f892cb41.js",
     "static/media/login_bg2.jpg": "/restaurant_pos/static/media/login_bg2.fb6aa55cb0de79268e21.jpg",
     "static/media/userImage.png": "/restaurant_pos/static/media/userImage.703ca5a572141d6ba169.png",
     "static/media/brownies.jpg": "/restaurant_pos/static/media/brownies.a92f320206d60d524eab.jpg",
     "static/media/pizza.jpg": "/restaurant_pos/static/media/pizza.6012ef7f4b10b9846cfc.jpg",
+    "static/media/nothing_in_cart.png": "/restaurant_pos/static/media/nothing_in_cart.d8c88a3475ac23a083b8.png",
     "static/media/bbq_steak.jpg": "/restaurant_pos/static/media/bbq_steak.7400132a8f6c9a60d603.jpg",
     "static/media/chicken_tikka_masala.jpg": "/restaurant_pos/static/media/chicken_tikka_masala.54fc1e55691583092322.jpg",
     "static/media/baked_beans.jpg": "/restaurant_pos/static/media/baked_beans.ab186512a6dd781f69fc.jpg",
@@ -34,11 +33,11 @@
     "static/media/Pasta.png": "/restaurant_pos/static/media/Pasta.1bb956c6fb47b252386a.png",
     "static/media/Bakery.png": "/restaurant_pos/static/media/Bakery.d1c33c566ace975fe0d5.png",
     "index.html": "/restaurant_pos/index.html",
-    "main.0c5779b7.css.map": "/restaurant_pos/static/css/main.0c5779b7.css.map",
-    "main.c4f89ff1.js.map": "/restaurant_pos/static/js/main.c4f89ff1.js.map"
+    "main.0702ad8a.css.map": "/restaurant_pos/static/css/main.0702ad8a.css.map",
+    "main.f892cb41.js.map": "/restaurant_pos/static/js/main.f892cb41.js.map"
   },
   "entrypoints": [
-    "static/css/main.0c5779b7.css",
-    "static/js/main.c4f89ff1.js"
+    "static/css/main.0702ad8a.css",
+    "static/js/main.f892cb41.js"
   ]
 }
