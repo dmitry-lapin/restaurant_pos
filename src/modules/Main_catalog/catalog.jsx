@@ -13,8 +13,10 @@ const Catalog = () => {
         <TextHeader text="Food & Drinks" color="text-zinc-950 dark:text-gray-300" size="text-sm md:text-xl" />
         <CheckoutBtn displayOnBig={true}/>
       </div>
-      <Categories />
-      <SelectedCategory />
+      <div className='px-2'>
+        <Categories />
+        <SelectedCategory />
+      </div>
     </div>
   );
 };
