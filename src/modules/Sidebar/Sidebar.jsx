@@ -2,7 +2,6 @@ import React, { useState, useEffect } from 'react';
 import Sidemenu from './components/Sidemenu/Sidemenu';
 import InfoContainer from './components/InfoContainer/InfoContainer';
 import MainLogo from '../../UI/MainLogo';
-import ModuleHeaderName from '../../UI/ModuleHeaderName';
 import MenuTogglerBtn from '../../UI/MenuTogglerBtn';
 import MenuWrapper from './components/MenuWrapper/MenuWrapper';
 import CheckoutBtn from '../../UI/CheckoutBtn';
@@ -33,8 +32,9 @@ const Sidebar = () => {
     <div className={menuStyling}>
       <div className="flex items-center py-3 md:py-0 px-5 md:px-0 md:block bg-zinc-300 dark:bg-zinc-900">
         <MenuTogglerBtn isMenuOpen={isMenuOpen} toggleMenu={toggleMenu} />
-        <MainLogo />
+        <div className='flex justify-between md:justify-normal md:block w-full'><MainLogo />
         {location.pathname === '/food_catalog' && <CheckoutBtn displayOnBig={false} />}
+        </div>
       </div>
       {isMenuOpen && (
         <MenuWrapper>
