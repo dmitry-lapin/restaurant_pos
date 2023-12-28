@@ -26,8 +26,6 @@ const SelectedCategory = () => {
   }, []);
 
   const filteredDishes = selectedCategory === "All" ? Object.keys(dishes) : [selectedCategory];
-  console.log(filteredDishes)
-  console.log(dishes)
 
   return (
     <>
