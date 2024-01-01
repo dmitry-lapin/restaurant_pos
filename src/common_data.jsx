@@ -24,6 +24,7 @@ import Food from './assets/menu_icons/food.png'
 import Messages from './assets/menu_icons/messages.png'
 import Bills from './assets/menu_icons/bills.png'
 import Settings from './assets/menu_icons/settings.png'
+import Team from "./assets/menu_icons/team.png";
 
 //user image 
 import userImage from '../src/assets/common_images/userImage.png'
@@ -33,7 +34,7 @@ const menuData = [
     ['Dashboard', '/dashboard', Dashboard],
     ['Food & Drinks', '/food_catalog', Food],
     ['Messages', '/messages', Messages],
-    ['Bills', '/bills', Bills],
+    ['Team', '/team', Team],
     ['Settings', '/settings', Settings]
 ];
 

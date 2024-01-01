@@ -8,18 +8,20 @@ import Messages from './pages/Messages';
 import Settings from './pages/Settings';
 import LoginPage from './pages/LoginPage';
 import ListOfOrders from './pages/ListOfOrders';
+import TeamPage from './pages/TeamPage';
 
 function App() {
   
   return (
     <Routes>
       <Route path="/" element={<LoginPage />} />
-      <Route path="/bills" element={<DateTimePicker />} />
-      <Route path="/dashboard" element={<Dashboard />} />
-      <Route path="/messages" element={<Messages />} />
-      <Route path="/settings" element={<Settings />} />
-      <Route path="/food_catalog" element={<FoodPage />} />
-      <Route path='/dashboard/orders' element={<ListOfOrders />} /> 
+      <Route path="bills" element={<DateTimePicker />} />
+      <Route path="dashboard" element={<Dashboard />} />
+      <Route path="messages" element={<Messages />} />
+      <Route path="settings" element={<Settings />} />
+      <Route path="food_catalog" element={<FoodPage />} />
+      <Route path='dashboard/orders' element={<ListOfOrders />} /> 
+      <Route path='team' element={<TeamPage />}/>
     </Routes>
   );
 }
