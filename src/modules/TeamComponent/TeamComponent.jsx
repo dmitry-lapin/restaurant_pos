@@ -8,6 +8,7 @@ const TeamComponent = () => {
                 <TextHeader text="Team" color="text-zinc-950 dark:text-gray-300" size="text-sm md:text-xl" />
             </div>
             <div className="p-5">
+                
             </div>
         </div>
     );
