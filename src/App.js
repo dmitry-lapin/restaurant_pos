@@ -10,19 +10,24 @@ import LoginPage from './pages/LoginPage';
 import ListOfOrders from './pages/ListOfOrders';
 import TeamPage from './pages/TeamPage';
 
+import { AuthProvider } from './app/helpers/AuthContext';
+import { ProtectedRoute } from './app/helpers/ProtectedRoute';
+
 function App() {
   
   return (
-    <Routes>
-      <Route path="/" element={<LoginPage />} />
-      <Route path="bills" element={<DateTimePicker />} />
-      <Route path="dashboard" element={<Dashboard />} />
-      <Route path="messages" element={<Messages />} />
-      <Route path="settings" element={<Settings />} />
-      <Route path="food_catalog" element={<FoodPage />} />
-      <Route path='dashboard/orders' element={<ListOfOrders />} /> 
-      <Route path='team' element={<TeamPage />}/>
-    </Routes>
+    <AuthProvider>
+      <Routes>
+        <Route path="/" element={<LoginPage />} />
+        <Route path="bills" element={<ProtectedRoute><DateTimePicker /></ProtectedRoute>} />
+        <Route path="dashboard" element={<ProtectedRoute><Dashboard /></ProtectedRoute>} />
+        <Route path="messages" element={<ProtectedRoute><Messages /></ProtectedRoute>} />
+        <Route path="settings" element={<ProtectedRoute><Settings /></ProtectedRoute>} />
+        <Route path="food_catalog" element={<ProtectedRoute><FoodPage /></ProtectedRoute>} />
+        <Route path='dashboard/orders' element={<ProtectedRoute><ListOfOrders /></ProtectedRoute>} /> 
+        <Route path='team' element={<ProtectedRoute><TeamPage /></ProtectedRoute>}/>
+      </Routes>
+    </AuthProvider>
   );
 }
 

@@ -12,6 +12,7 @@ import GoogleIcon from "../../../../../assets/login_icons/google_icon.png"
 import { useNavigate } from "react-router-dom"; // Navigate method (Routing).
 
 const LoginForm = () => {
+
     const navigate = useNavigate();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
