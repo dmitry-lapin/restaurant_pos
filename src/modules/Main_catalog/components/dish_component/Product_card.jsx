@@ -19,9 +19,9 @@ const ProductCard = ({ dish }) => {
 
   return (
     <div className="flex flex-col space-y-3">
-      <div className="relative flex items-center h-40 overflow-hidden rounded-2xl">
+      <div className="relative flex items-center justify-center h-40 overflow-hidden rounded-2xl">
         <span className="absolute bg-blur backdrop-filter bg-white/50 backdrop-blur-sm rounded-full px-3.5 py-1.5 bottom-4 left-4 text-black font-medium">Available</span>
-        <img src={dish.image} alt="Product" className="w-full h-full" />
+        <img src={dish.image} alt="Product" className="h-full" />
       </div>
       <div className="flex flex-col flex-1 justify-between text-zinc-950 dark:text-gray-300 px-1 space-y-1">
         <div className="space-y-1">

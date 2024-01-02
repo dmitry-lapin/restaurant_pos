@@ -8,7 +8,7 @@ import { database } from "../../../../firebase_config";
 import { ref, onValue, off } from "firebase/database";
 
 const SelectedCategory = () => {
-
+  
   const [dishes, setDishes] = useState({});
   const selectedCategory = useSelector((state) => state.Categories.selectedCategory);
 
