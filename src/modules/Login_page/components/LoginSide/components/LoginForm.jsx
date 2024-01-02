@@ -4,14 +4,17 @@ import { signInWithEmailAndPassword } from "firebase/auth"; //Firebase Sign in m
 import { auth } from "../../../../../firebase_config"; // auth logic.
 
 import TextHeader from "../../../../../UI/textHeader";
-import TextInput from "../../../../../UI/TextInput";
 import LoginPageBtn from "../../../../../UI/LoginPageBtn";
 import LoginOptions from "./LoginOptions";
 import GoogleIcon from "../../../../../assets/login_icons/google_icon.png"
 
 import { useNavigate } from "react-router-dom"; // Navigate method (Routing).
 
+import { setUID } from "./slices/AuthReducer";
+import { useDispatch } from "react-redux";
+
 const LoginForm = () => {
+    const dispatch = useDispatch();
 
     const navigate = useNavigate();
     const [email, setEmail] = useState('');
@@ -30,7 +33,7 @@ const LoginForm = () => {
         .then((userCredential) => {
             const user = userCredential.user;
             navigate("/food_catalog")
-            console.log(user);
+            dispatch(setUID(user.uid));
         })
         .catch((error) => {
             const errorCode = error.code;
