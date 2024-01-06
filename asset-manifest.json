@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/restaurant_pos/static/css/main.fb61cbd8.css",
-    "main.js": "/restaurant_pos/static/js/main.f151ee61.js",
+    "main.css": "/restaurant_pos/static/css/main.0477fd5a.css",
+    "main.js": "/restaurant_pos/static/js/main.8dd56946.js",
     "static/media/login_bg2.jpg": "/restaurant_pos/static/media/login_bg2.fb6aa55cb0de79268e21.jpg",
     "static/media/userImage.png": "/restaurant_pos/static/media/userImage.703ca5a572141d6ba169.png",
     "static/media/brownies.jpg": "/restaurant_pos/static/media/brownies.a92f320206d60d524eab.jpg",
@@ -34,11 +34,11 @@
     "static/media/Pasta.png": "/restaurant_pos/static/media/Pasta.1bb956c6fb47b252386a.png",
     "static/media/Bakery.png": "/restaurant_pos/static/media/Bakery.d1c33c566ace975fe0d5.png",
     "index.html": "/restaurant_pos/index.html",
-    "main.fb61cbd8.css.map": "/restaurant_pos/static/css/main.fb61cbd8.css.map",
-    "main.f151ee61.js.map": "/restaurant_pos/static/js/main.f151ee61.js.map"
+    "main.0477fd5a.css.map": "/restaurant_pos/static/css/main.0477fd5a.css.map",
+    "main.8dd56946.js.map": "/restaurant_pos/static/js/main.8dd56946.js.map"
   },
   "entrypoints": [
-    "static/css/main.fb61cbd8.css",
-    "static/js/main.f151ee61.js"
+    "static/css/main.0477fd5a.css",
+    "static/js/main.8dd56946.js"
   ]
 }
