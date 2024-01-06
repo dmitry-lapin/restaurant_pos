@@ -1,8 +1,6 @@
 import React, { useEffect, useState } from "react";
 import ProductCard from "../dish_component/Product_card";
-import FeedWrapper from "../feed_wrapper/FeedWrapper";
 import TextHeader from "../../../../UI/textHeader";
-import CategoryFeed from "./Category_feed";
 import { useSelector } from "react-redux";
 import { database } from "../../../../firebase_config";
 import { ref, onValue, off } from "firebase/database";

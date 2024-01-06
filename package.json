@@ -24,6 +24,7 @@
     "react-tailwindcss-datepicker": "^1.6.6",
     "redux": "^4.2.1",
     "sass": "^1.69.5",
+    "tailwind-scrollbar-hide": "^1.1.7",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
