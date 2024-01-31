@@ -14,10 +14,22 @@ const Sidebar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(true);
   const location = useLocation();
 
-
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   }
+
+  useEffect(() => {
+    const handleBodyScroll = () => {
+      document.body.style.overflow = isMenuOpen ? 'hidden' : 'auto';
+    };
+
+    document.body.style.overflow = isMenuOpen ? 'hidden' : 'auto';
+    window.addEventListener('scroll', handleBodyScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleBodyScroll);
+    };
+  }, [isMenuOpen]);
 
   let menuStyling = `flex flex-col md:flex w-full md:flex-col md:h-screen bg-zinc-200 dark:bg-stone-950 md:w-fit lg:w-3/12 md:space-y-3 md:border-r md:border-r-1 dark:border-zinc-950 border-zinc-300 ${isMenuOpen ? "h-full absolute top-0 left-0 md:sticky z-10 " : ""}`;
 

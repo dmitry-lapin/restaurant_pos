@@ -14,8 +14,6 @@ import darkModeVisibility from '../modules/Sidebar/components/ThemeToggler/slice
 
 import UIDSliceReducer from '../modules/Login_page/components/LoginSide/components/slices/AuthReducer';
 
-import teamSlice from '../modules/TeamComponent/slices/teamSlice';
-
 const rootReducer = combineReducers({
   OrderDetails: OrderDetailsReducer,
   Categories: SelectedCategorySliceReducer,
@@ -25,7 +23,6 @@ const rootReducer = combineReducers({
   ToggleTableModal: toggleTableModalSlice,
   DarkModeToggler: darkModeVisibility,
   UIDSlice: UIDSliceReducer,
-  teamSlice: teamSlice,
 });
 
 export default rootReducer;
