@@ -4,7 +4,7 @@ import TeamComponent from '../modules/TeamComponent/TeamComponent';
 
 const TeamPage = () => {
     return(
-        <div className="flex flex-col md:flex-row h-screen">
+        <div className="flex flex-col md:flex-row">
             <Sidebar />
             <TeamComponent />
         </div>
