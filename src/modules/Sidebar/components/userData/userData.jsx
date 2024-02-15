@@ -1,9 +1,11 @@
+// UserData.js
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { database } from "../../../../firebase_config";
 import { ref, onValue, off } from "firebase/database";
-
 import { getAuth } from "firebase/auth";
+import { SignOutUser } from "./helpers/signoutUser";
+import { useNavigate } from 'react-router-dom'; // Импортируем useNavigate
 
 const UserData = () => {
     const auth = getAuth();
@@ -11,6 +13,11 @@ const UserData = () => {
     const userUID = user.uid;
 
     const [userInfo, setUserInfo] = useState({ name: '', role: '', image: '' }); // to keep all the userData which i do need for this component.
+    const navigate = useNavigate(); // Используем useNavigate для перенаправления
+
+    const onSignOut = () => {
+        SignOutUser(navigate); // Передаем navigate в функцию SignOutUser
+    }
 
     useEffect(() => {
         if (userUID) {
@@ -36,6 +43,7 @@ const UserData = () => {
                 <p className="text-zinc-950 dark:text-gray-300 font-semibold text-md xl:text-lg">{userInfo.name}</p>
                 <p className="text-zinc-950 dark:text-gray-300 font-normal truncate text-sm xl:text-normal">{userInfo.role}</p>
             </div>
+            <button onClick={onSignOut}><p className="text-white">exit</p></button>
         </div>
     );
 }
