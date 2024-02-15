@@ -3,9 +3,14 @@ import { useSelector } from "react-redux";
 import { database } from "../../../../firebase_config";
 import { ref, onValue, off } from "firebase/database";
 
+import { getAuth } from "firebase/auth";
+
 const UserData = () => {
-    const userUID = useSelector((state) => state.UIDSlice.UID);
-    const [userInfo, setUserInfo] = useState({ name: '', role: '', image: '' });
+    const auth = getAuth();
+    const user = auth.currentUser;
+    const userUID = user.uid;
+
+    const [userInfo, setUserInfo] = useState({ name: '', role: '', image: '' }); // to keep all the userData which i do need for this component.
 
     useEffect(() => {
         if (userUID) {

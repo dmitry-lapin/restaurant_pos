@@ -4,13 +4,12 @@ import { Navigate, useLocation } from 'react-router-dom';
 import { useAuth } from './AuthContext';
 
 export const ProtectedRoute = ({ children }) => {
-    const { currentUser } = useAuth();
+    let { currentUser } = useAuth();
     const location = useLocation();
 
     if (!currentUser) {
-        return <Navigate to="/login" replace state={{ from: location }} />;
+        return <Navigate to="/" replace state={{ from: location }} />;
     }
 
     return children;
 };
-

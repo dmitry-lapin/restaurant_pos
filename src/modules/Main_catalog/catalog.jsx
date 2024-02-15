@@ -3,8 +3,21 @@ import Categories from './components/categories_feed/categories';
 import SelectedCategory from './components/categories_feed/SelectedCategory';
 import TextHeader from '../../UI/textHeader';
 import CheckoutBtn from '../../UI/CheckoutBtn';
+import { getAuth, onAuthStateChanged } from "firebase/auth";
 
 const Catalog = () => {
+  const auth = getAuth();
+  const user = auth.currentUser;
+  console.log(user);
+  onAuthStateChanged(auth, (user) => {
+    if (user) {
+      const uid = user.uid;
+      // ...
+    } else {
+      // User is signed out
+      // ...
+    }
+  });
 
   return (
     <div className="w-full flex flex-1 flex-col md:w-10/12 lg:w-9/12 bg-zinc-100 dark:bg-zinc-800">
