@@ -13,10 +13,10 @@ const UserData = () => {
     const userUID = user.uid;
 
     const [userInfo, setUserInfo] = useState({ name: '', role: '', image: '' }); // to keep all the userData which i do need for this component.
-    const navigate = useNavigate(); // Используем useNavigate для перенаправления
+    const navigate = useNavigate(); 
 
     const onSignOut = () => {
-        SignOutUser(navigate); // Передаем navigate в функцию SignOutUser
+        SignOutUser(navigate); 
     }
 
     useEffect(() => {

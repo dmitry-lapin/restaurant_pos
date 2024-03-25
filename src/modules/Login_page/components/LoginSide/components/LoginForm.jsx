@@ -16,6 +16,9 @@ import { useDispatch } from "react-redux";
 const LoginForm = () => {
     const dispatch = useDispatch();
 
+    const [errorMessage, setErrorMessage] = useState('');
+
+
     const navigate = useNavigate();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
@@ -38,8 +41,13 @@ const LoginForm = () => {
         .catch((error) => {
             const errorCode = error.code;
             const errorMessage = error.message;
-            console.log(errorCode, errorMessage)
+            setErrorMessage('Invalid email or password. Please try again.');
+            console.log(errorCode, errorMessage);
+            setTimeout(() => {
+                setErrorMessage('');
+            }, 5000); 
         });
+        
     }
 
     return(
@@ -53,7 +61,7 @@ const LoginForm = () => {
                             <p className="mb-1">Email</p>
                             <div className="relative">
                                 <input 
-                                    className="placeholder:italic placeholder:text-slate-600 block bg-white w-full border border-slate-300 rounded-md py-2.5 px-3 shadow-sm focus:outline-none focus:border-purple-600 focus:ring-purple-600 focus:ring-1 sm:text-sm" 
+                                    className={`placeholder:italic placeholder:text-slate-600 block bg-white w-full rounded-md py-2.5 px-3 shadow-sm focus:outline-none focus:border-purple-600 focus:ring-purple-600 focus:ring-1 sm:text-sm ` + (errorMessage !== '' ? ' border border-red-500 ' : ' border border-slate-300 ')}
                                     placeholder="yourmail@domain.com"
                                     type="email" 
                                     name="email"
@@ -69,7 +77,7 @@ const LoginForm = () => {
                             <p className="mb-1">Password</p>
                             <div className="relative">
                                 <input
-                                    className="placeholder-italic placeholder-text-slate-600 block bg-white w-full border border-slate-300 rounded-md py-2.5 px-3 shadow-sm focus:outline-none focus:border-purple-600 focus:ring-purple-600 focus:ring-1 sm:text-sm duration-100"
+                                    className={`placeholder-italic placeholder-text-slate-600 block bg-white w-full rounded-md py-2.5 px-3 shadow-sm focus:outline-none focus:border-purple-600 focus:ring-purple-600 focus:ring-1 sm:text-sm duration-100 ` + (errorMessage !== '' ? ' border border-red-500 ' : ' border border-slate-300 ')}
                                     placeholder="password here"
                                     type={showPassword ? 'text' : 'password'}
                                     name="password"
@@ -96,6 +104,7 @@ const LoginForm = () => {
                             <p className="text-zinc-500 text-end hover:text-violet-600 duration-100 cursor-pointer mt-1">Forgot password</p>
                         </div> {/*end of password field*/}
                         <button onClick={onLogin} className="flex flex-row items-center justify-center space-x-1 text-center rounded-md font-medium py-2.5 w-9/12 hover:ring-2 hover:ring-offset-1 duration-100 mt-6 bg-violet-500 hover:bg-violet-600 text-white ring-violet-600">Login</button>
+                        {errorMessage && <span class="w-9/12 mt-4 inline-flex items-center justify-center rounded-md bg-red-50 px-3 py-2 text-sm font-medium text-red-700 ring-1 ring-inset ring-red-600/10">{errorMessage}</span>}
                         <p className="font-semibold my-8">OR</p>
                         <LoginOptions>
                             <LoginPageBtn restParams={"hover:bg-zinc-100 border border-zinc-500 text-black ring-zinc-500"}><img alt="google_icon" className="w-7 h-7" src={GoogleIcon} /><p>Continue with Google</p></LoginPageBtn>
