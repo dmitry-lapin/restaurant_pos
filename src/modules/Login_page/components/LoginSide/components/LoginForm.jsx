@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 import { signInWithEmailAndPassword } from "firebase/auth"; //Firebase Sign in method.
 import { auth } from "../../../../../firebase_config"; // auth logic.
@@ -18,6 +18,10 @@ const LoginForm = () => {
 
     const [errorMessage, setErrorMessage] = useState('');
 
+    useEffect(() => {
+        setEmail('');
+        setPassword('');
+    },[])
 
     const navigate = useNavigate();
     const [email, setEmail] = useState('');
@@ -67,6 +71,7 @@ const LoginForm = () => {
                                     name="email"
                                     onChange={(e)=>setEmail(e.target.value)}
                                     required
+                                    autoComplete="off"
                                 />
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={1.2} stroke="currentColor" className="absolute top-1/2 right-3 transform -translate-y-1/2 focus:outline-none w-6 h-6">
                                     <path strokeLinecap="round" d="M16.5 12a4.5 4.5 0 11-9 0 4.5 4.5 0 019 0zm0 0c0 1.657 1.007 3 2.25 3S21 13.657 21 12a9 9 0 10-2.636 6.364M16.5 12V8.25" />
@@ -84,6 +89,13 @@ const LoginForm = () => {
                                     id="password"
                                     required
                                     onChange={(e) => setPassword(e.target.value)}
+                                    autoComplete="off"
+                                    onKeyDown={(e) => {
+                                        if (e.key === 'Enter') {
+                                            e.preventDefault();
+                                            onLogin(e);
+                                        }
+                                    }}
                                 />
                                 <button
                                     className="absolute top-1/2 right-3 transform -translate-y-1/2 focus:outline-none"
