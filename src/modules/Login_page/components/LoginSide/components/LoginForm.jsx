@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 
 import { signInWithEmailAndPassword } from "firebase/auth"; //Firebase Sign in method.
 import { auth } from "../../../../../firebase_config"; // auth logic.
+import { getAuth, sendPasswordResetEmail } from "firebase/auth";
 
 import TextHeader from "../../../../../UI/textHeader";
 import LoginPageBtn from "../../../../../UI/LoginPageBtn";
@@ -14,6 +15,8 @@ import { setUID } from "./slices/AuthReducer";
 import { useDispatch } from "react-redux";
 
 const LoginForm = () => {
+    const auth = getAuth();
+
     const dispatch = useDispatch();
 
     const [errorMessage, setErrorMessage] = useState('');
@@ -52,6 +55,27 @@ const LoginForm = () => {
             }, 5000); 
         });
         
+    }
+
+    const onForgetPassword = () => {
+        sendPasswordResetEmail(auth, email)
+        .then(() => {
+
+        })
+        .catch((error) => {
+            const errorCode = error.code;
+            const errorMsg = error.message;
+            console.log(errorCode);
+            errorCode === 'auth/missing-email' ?
+    (() => {
+        setErrorMessage('Missing email!');
+        setTimeout(() => {
+            setErrorMessage('');
+        }, 5000);
+    })() :
+    setErrorMessage('');
+
+        })
     }
 
     return(
@@ -113,7 +137,7 @@ const LoginForm = () => {
                                     )}
                                 </button>
                             </div>
-                            <p className="text-zinc-500 text-end hover:text-violet-600 duration-100 cursor-pointer mt-1">Forgot password</p>
+                            <p onClick={onForgetPassword} className="text-zinc-500 text-end hover:text-violet-600 duration-100 cursor-pointer mt-1">Forgot password</p>
                         </div> {/*end of password field*/}
                         <button onClick={onLogin} className="flex flex-row items-center justify-center space-x-1 text-center rounded-md font-medium py-2.5 w-9/12 hover:ring-2 hover:ring-offset-1 duration-100 mt-6 bg-violet-500 hover:bg-violet-600 text-white ring-violet-600">Login</button>
                         {errorMessage && <span class="w-9/12 mt-4 inline-flex items-center justify-center rounded-md bg-red-50 px-3 py-2 text-sm font-medium text-red-700 ring-1 ring-inset ring-red-600/10">{errorMessage}</span>}
