@@ -140,13 +140,17 @@ const LoginForm = () => {
                             <p onClick={onForgetPassword} className="text-zinc-500 text-end hover:text-violet-600 duration-100 cursor-pointer mt-1">Forgot password</p>
                         </div> {/*end of password field*/}
                         <button onClick={onLogin} className="flex flex-row items-center justify-center space-x-1 text-center rounded-md font-medium py-2.5 w-9/12 hover:ring-2 hover:ring-offset-1 duration-100 mt-6 bg-violet-500 hover:bg-violet-600 text-white ring-violet-600">Login</button>
-                        {errorMessage && <span class="w-9/12 mt-4 inline-flex items-center justify-center rounded-md bg-red-50 px-3 py-2 text-sm font-medium text-red-700 ring-1 ring-inset ring-red-600/10">{errorMessage}</span>}
+                        {errorMessage && <span className="w-9/12 mt-4 inline-flex items-center justify-center rounded-md bg-red-50 px-3 py-2 text-sm font-medium text-red-700 ring-1 ring-inset ring-red-600/10">{errorMessage}</span>}
                         <p className="font-semibold my-8">OR</p>
                         <LoginOptions>
                             <LoginPageBtn restParams={"hover:bg-zinc-100 border border-zinc-500 text-black ring-zinc-500"}><img alt="google_icon" className="w-7 h-7" src={GoogleIcon} /><p>Continue with Google</p></LoginPageBtn>
                         </LoginOptions>
                     </div>
                 </form>
+            </section>
+            <section className="flex flex-col items-center mt-5 ">
+                <p>login: homer@simpson.com</p>
+                <p>passwort: homersimpson</p>
             </section>
         </main>
     );

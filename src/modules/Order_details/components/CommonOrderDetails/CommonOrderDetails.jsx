@@ -29,7 +29,8 @@ const CommonOrderDetails = () => {
             <div className="flex flex-row space-x-3 items-center">
                 <button onClick={handleTableChange} className="text-zinc-950 dark:text-gray-300 text-lg capitalize">Table {tableNumber}</button>
             </div>
-            <div className="w-1/2">
+            <div className="flex w-1/2">
+                <p className='content-center pr-2 font-semibold text-red-500'>!</p>
                 <Datepicker
                     primaryColor={"orange"}
                     useRange={false}

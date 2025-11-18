@@ -29,7 +29,7 @@ const OrderDetails = () => {
             <div className="bg-black bg-opacity-60 absolute inset-0 z-0"></div>
         <div className="bg-zinc-200 dark:bg-stone-950 w-full md:w-6/12 lg:w-4/12 xl:w-3/12 absolute right-0 h-full overflow-auto">
             <div className="flex flex-col h-full">
-                <div className="flex items-center justify-between p-5 bg-zinc-300 dark:bg-zinc-900">
+                <div className="flex flex-auto items-center justify-between p-5 bg-zinc-300 dark:bg-zinc-900">
                     <TextHeader text="Order details" color="text-zinc-950 dark:text-gray-300" size="text-lg xl:text-xl"></TextHeader>
                     <CloseBtn onClick={handleCheckoutClick} />
                 </div>

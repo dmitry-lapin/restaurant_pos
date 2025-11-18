@@ -36,7 +36,7 @@ const PaymentOptions = () => {
                     </PaymentBtn>
                 ))}
             </div>
-            <hr className="border border-zinc-950 dark:border-gray-300"/>
+            
             <button
                 onClick={handleToggleModal}
                 className={`text-white bg-zinc-600 hover:bg-zinc-800 dark:text-black dark:bg-slate-100 dark:hover:bg-slate-200 duration-100 rounded-2xl font-semibold text-2xl h-14 ${

@@ -8,7 +8,6 @@ import { getAuth, onAuthStateChanged } from "firebase/auth";
 const Catalog = () => {
   const auth = getAuth();
   const user = auth.currentUser;
-  console.log(user);
   onAuthStateChanged(auth, (user) => {
     if (user) {
       const uid = user.uid;
